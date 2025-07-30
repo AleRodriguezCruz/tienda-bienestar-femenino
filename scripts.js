@@ -125,7 +125,7 @@ const posts = {
   'bienestar': {
     title: '5 Consejos de Bienestar Femenino',
     date: '24/07/2025',
-    image: 'img/blog_bienestar.jpg',
+    image: 'blog_bienestar.jpg',
     excerpt: 'Mantener y potenciar tu bienestar físico y emocional es clave para una vida plena.',
     content: `
       <img src="blog_bienestar.jpg" class="blog-img-detalle" alt="Bienestar femenino">
