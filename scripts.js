@@ -128,7 +128,7 @@ const posts = {
     image: 'img/blog_bienestar.jpg',
     excerpt: 'Mantener y potenciar tu bienestar físico y emocional es clave para una vida plena.',
     content: `
-      <img src="img/blog_bienestar.jpg" class="blog-img-detalle" alt="Bienestar femenino">
+      <img src="blog_bienestar.jpg" class="blog-img-detalle" alt="Bienestar femenino">
       <p><b>1. Escucha a tu cuerpo.</b> Aprende a reconocer tus necesidades físicas y emocionales.<br>
       <b>2. Prioriza el descanso.</b> El sueño adecuado regenera tu energía.<br>
       <b>3. Alimentación balanceada.</b> Integra productos naturales y alimentos frescos.<br>
