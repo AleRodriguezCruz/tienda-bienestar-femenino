@@ -11,14 +11,11 @@
   <!-- Font Awesome para iconos sociales -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-
-
   <!-- Vincular CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
- <header>
+<header>
   <div class="logo">Xochikali</div>
   <nav>
     <a href="#inicio" class="active">Inicio</a>
@@ -33,8 +30,7 @@
   </div>
 </header>
 
-
- <!-- Carrito Modal -->
+<!-- Carrito Modal -->
 <div id="cartModal" class="cart-modal">
   <div class="cart-content">
     <span class="close-cart" onclick="closeCart()">&times;</span>
@@ -44,7 +40,6 @@
     <button class="btn-checkout" onclick="checkoutCart()">Finalizar compra</button>
   </div>
 </div>
-
 
 <!-- Sección Blog -->
 <section class="blog-section" id="blog">
@@ -71,129 +66,126 @@
   <button id="volverBlog" class="volver-blog" style="display:none" onclick="closeBlog()">← Volver al blog</button>
 </section>
 
-
-  <!-- Sección Productos -->
-  <main id="productos">
-    <h2>Nuestros Productos</h2>
-    <div class="filters">
-      <button class="active" onclick="filterProducts('all', event)">Todos</button>
-      <button onclick="filterProducts('bienestar', event)">Bienestar</button>
-      <button onclick="filterProducts('belleza', event)">Belleza</button>
-      <button onclick="filterProducts('aromaterapia', event)">Aromaterapia</button>
-    </div>
-
-    <div class="products">
-      <div class="card bienestar">
-        <img src="img/colageno.jpg" alt="Suplemento de Colágeno Marino" />
-        <div class="category-tag">Bienestar</div>
-        <h3>Suplemento de Colágeno Marino</h3>
-        <p class="description">Colágeno marino hidrolizado de alta absorción para piel y articulaciones saludables.</p>
-        <div class="benefits">
-          <span>Mejora elasticidad</span>
-          <span>Fortalece uñas y cabello</span>
-        </div>
-        <p class="price">$80.99</p>
-        <button class="btn-add-cart" onclick="addToCart('Suplemento de Colágeno Marino')">Agregar al Carrito</button>
-      </div>
-
-      <div class="card bienestar">
-        <img src="img/multivitaminico.jpg" alt="Multivitamínico Femenino Premium" />
-        <div class="category-tag">Bienestar</div>
-        <h3>Multivitamínico Femenino Premium</h3>
-        <p class="description">Vitaminas y minerales esenciales para el bienestar integral de la mujer.</p>
-        <div class="benefits">
-          <span>Energía y equilibrio</span>
-        </div>
-        <p class="price">$65.50</p>
-        <button class="btn-add-cart" onclick="addToCart('Multivitamínico Femenino Premium')">Agregar al Carrito</button>
-      </div>
-
-      <div class="card belleza">
-        <img src="img/serum.jpg" alt="Serum Anti-edad de Vitamina C" />
-        <div class="category-tag">Belleza</div>
-        <h3>Serum Anti-edad de Vitamina C</h3>
-        <p class="description">Serum de vitamina C pura para iluminar y rejuvenecer la piel.</p>
-        <div class="benefits">
-          <span>Reduce líneas de expresión</span>
-          <span>Ilumina la piel</span>
-        </div>
-        <p class="price">$125.00</p>
-        <button class="btn-add-cart" onclick="addToCart('Serum Anti-edad de Vitamina C')">Agregar al Carrito</button>
-      </div>
-
-      <div class="card aromaterapia">
-        <img src="img/aceite.jpg" alt="Aceite Esencial de Lavanda" />
-        <div class="category-tag">Aromaterapia</div>
-        <h3>Aceite Esencial de Lavanda</h3>
-        <p class="description">Aceite 100% natural para relajación y bienestar emocional.</p>
-        <div class="benefits">
-          <span>Calma estrés</span>
-          <span>Mejora el sueño</span>
-        </div>
-        <p class="price">$45.00</p>
-        <button class="btn-add-cart" onclick="addToCart('Aceite Esencial de Lavanda')">Agregar al Carrito</button>
-      </div>
-    </div>
-  </main>
-
-  <!-- Sección Testimonios -->
-  <section class="testimonios" id="testimonios">
-    <h2>Testimonios</h2>
-    <div class="lista-testimonios">
-      <div class="testimonio">
-        <p>“Me encanta la calidad de los productos y la atención personalizada. ¡Repetiré mi compra!”</p>
-        <span>- Mariana R.</span>
-      </div>
-      <div class="testimonio">
-        <p>“El serum de vitamina C realmente mejoró la luminosidad de mi piel. Súper recomendados.”</p>
-        <span>- Paula G.</span>
-      </div>
-      <div class="testimonio">
-        <p>“Fácil de comprar, entrega rápida y productos hermosos. ¡Gracias Xochikali!”</p>
-        <span>- Fernanda S.</span>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Sección Contacto -->
-  <section class="contacto" id="contacto">
-    <h2>Contacto</h2>
-    <form class="form-contacto" onsubmit="enviarContacto(event)">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo" required />
-      <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje" required></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-    <div class="contact-info">
-      <p>Correo: hola@xochikali.com</p>
-      <p>WhatsApp: +52 55 1234 5678</p>
-    </div>
-  </section>
-
-  <!-- Iconos redes sociales -->
-  <div class="social-icons">
-    <a href="https://www.facebook.com/tuPerfil" target="_blank" aria-label="Facebook" class="social-icon facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.twitter.com/tuPerfil" target="_blank" aria-label="Twitter" class="social-icon twitter">
-      <i class="fab fa-twitter"></i>
-    </a>
-    <a href="https://www.instagram.com/tuPerfil" target="_blank" aria-label="Instagram" class="social-icon instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.pinterest.com/tuPerfil" target="_blank" aria-label="Pinterest" class="social-icon pinterest">
-      <i class="fab fa-pinterest-p"></i>
-    </a>
+<!-- Sección Productos -->
+<main id="productos">
+  <h2>Nuestros Productos</h2>
+  <div class="filters">
+    <button class="active" onclick="filterProducts('all', event)">Todos</button>
+    <button onclick="filterProducts('bienestar', event)">Bienestar</button>
+    <button onclick="filterProducts('belleza', event)">Belleza</button>
+    <button onclick="filterProducts('aromaterapia', event)">Aromaterapia</button>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Xochikali | Nutrición & Bienestar Femenino</p>
-  </footer>
+  <div class="products">
+    <div class="card bienestar">
+      <img src="img/colageno.jpg" alt="Suplemento de Colágeno Marino" />
+      <div class="category-tag">Bienestar</div>
+      <h3>Suplemento de Colágeno Marino</h3>
+      <p class="description">Colágeno marino hidrolizado de alta absorción para piel y articulaciones saludables.</p>
+      <div class="benefits">
+        <span>Mejora elasticidad</span>
+        <span>Fortalece uñas y cabello</span>
+      </div>
+      <p class="price">$80.99</p>
+      <button class="btn-add-cart" onclick="addToCart('Suplemento de Colágeno Marino')">Agregar al Carrito</button>
+    </div>
 
-  <!-- Vincular JavaScript -->
-  <script src="scripts.js"></script>
+    <div class="card bienestar">
+      <img src="img/multivitaminico.jpg" alt="Multivitamínico Femenino Premium" />
+      <div class="category-tag">Bienestar</div>
+      <h3>Multivitamínico Femenino Premium</h3>
+      <p class="description">Vitaminas y minerales esenciales para el bienestar integral de la mujer.</p>
+      <div class="benefits">
+        <span>Energía y equilibrio</span>
+      </div>
+      <p class="price">$65.50</p>
+      <button class="btn-add-cart" onclick="addToCart('Multivitamínico Femenino Premium')">Agregar al Carrito</button>
+    </div>
+
+    <div class="card belleza">
+      <img src="img/serum.jpg" alt="Serum Anti-edad de Vitamina C" />
+      <div class="category-tag">Belleza</div>
+      <h3>Serum Anti-edad de Vitamina C</h3>
+      <p class="description">Serum de vitamina C pura para iluminar y rejuvenecer la piel.</p>
+      <div class="benefits">
+        <span>Reduce líneas de expresión</span>
+        <span>Ilumina la piel</span>
+      </div>
+      <p class="price">$125.00</p>
+      <button class="btn-add-cart" onclick="addToCart('Serum Anti-edad de Vitamina C')">Agregar al Carrito</button>
+    </div>
+
+    <div class="card aromaterapia">
+      <img src="img/aceite.jpg" alt="Aceite Esencial de Lavanda" />
+      <div class="category-tag">Aromaterapia</div>
+      <h3>Aceite Esencial de Lavanda</h3>
+      <p class="description">Aceite 100% natural para relajación y bienestar emocional.</p>
+      <div class="benefits">
+        <span>Calma estrés</span>
+        <span>Mejora el sueño</span>
+      </div>
+      <p class="price">$45.00</p>
+      <button class="btn-add-cart" onclick="addToCart('Aceite Esencial de Lavanda')">Agregar al Carrito</button>
+    </div>
+  </div>
+</main>
+
+<!-- Sección Testimonios -->
+<section class="testimonios" id="testimonios">
+  <h2>Testimonios</h2>
+  <div class="lista-testimonios">
+    <div class="testimonio">
+      <p>“Me encanta la calidad de los productos y la atención personalizada. ¡Repetiré mi compra!”</p>
+      <span>- Mariana R.</span>
+    </div>
+    <div class="testimonio">
+      <p>“El serum de vitamina C realmente mejoró la luminosidad de mi piel. Súper recomendados.”</p>
+      <span>- Paula G.</span>
+    </div>
+    <div class="testimonio">
+      <p>“Fácil de comprar, entrega rápida y productos hermosos. ¡Gracias Xochikali!”</p>
+      <span>- Fernanda S.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Sección Contacto -->
+<section class="contacto" id="contacto">
+  <h2>Contacto</h2>
+  <form class="form-contacto" onsubmit="enviarContacto(event)">
+    <input type="text" name="nombre" placeholder="Tu nombre" required />
+    <input type="email" name="email" placeholder="Tu correo" required />
+    <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje" required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+  <div class="contact-info">
+    <p>Correo: hola@xochikali.com</p>
+    <p>WhatsApp: +52 55 1234 5678</p>
+  </div>
+</section>
+
+<!-- Iconos redes sociales -->
+<div class="social-icons">
+  <a href="https://www.facebook.com/tuPerfil" target="_blank" aria-label="Facebook" class="social-icon facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://www.twitter.com/tuPerfil" target="_blank" aria-label="Twitter" class="social-icon twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/tuPerfil" target="_blank" aria-label="Instagram" class="social-icon instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.pinterest.com/tuPerfil" target="_blank" aria-label="Pinterest" class="social-icon pinterest">
+    <i class="fab fa-pinterest-p"></i>
+  </a>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Xochikali | Nutrición & Bienestar Femenino</p>
+</footer>
+
+<!-- Vincular JavaScript -->
+<script src="scripts.js"></script>
 </body>
 </html>
