@@ -46,28 +46,31 @@
 </div>
 
 
-   <!-- Sección Blog -->
-  <section class="blog-section" id="blog">
-    <h2>Blog</h2>
+<!-- Sección Blog -->
+<section class="blog-section" id="blog">
+  <h2>Blog</h2>
 
-    <!-- Carrusel -->
-    <div class="blog-carousel" id="blogCarousel">
-      <button class="carousel-arrow left" onclick="moveCarousel(-1)">&#60;</button>
-      <div class="carousel-track" id="carouselTrack">
-        <!-- Slides se cargan con JS -->
-      </div>
-      <button class="carousel-arrow right" onclick="moveCarousel(1)">&#62;</button>
+  <!-- Carrusel -->
+  <div class="blog-carousel" id="blogCarousel">
+    <button class="carousel-arrow left" onclick="moveCarousel(-1)">&#60;</button>
+    <div class="carousel-track" id="carouselTrack">
+      <!-- Slides se cargarán dinámicamente con JS -->
     </div>
+    <button class="carousel-arrow right" onclick="moveCarousel(1)">&#62;</button>
+  </div>
 
-    <!-- Listado de posts para vista previa -->
-    <div class="blog-list">
-      <!-- También se puede navegar aquí si cierras detalle -->
-    </div>
+  <!-- Listado de posts para vista previa -->
+  <div class="blog-list">
+    <!-- Previews se cargarán dinámicamente con JS -->
+  </div>
 
-    <!-- Post detallado -->
-    <div id="blog-detail" class="blog-detail" style="display:none"></div>
-    <button id="volverBlog" class="volver-blog" style="display:none" onclick="closeBlog()">← Volver al blog</button>
-  </section>
+  <!-- Post detallado -->
+  <div id="blog-detail" class="blog-detail" style="display:none"></div>
+
+  <!-- Botón para volver al listado/carrusel -->
+  <button id="volverBlog" class="volver-blog" style="display:none" onclick="closeBlog()">← Volver al blog</button>
+</section>
+
 
   <!-- Sección Productos -->
   <main id="productos">
