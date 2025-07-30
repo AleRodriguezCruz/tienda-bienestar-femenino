@@ -7,7 +7,10 @@
   
   <!-- Fuente Montserrat para elegancia -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
-  
+
+  <!-- Font Awesome para iconos sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
   <!-- Vincular CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -18,12 +21,10 @@
       <a href="#inicio" class="active">Inicio</a>
       <a href="#productos">Productos</a>
       <a href="#testimonios">Testimonios</a>
+      <a href="#blog">Blog</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <div class="carrito" onclick="mostrarCarrito()">Carrito (0)</div>
-    <!-- Font Awesome para iconos de redes sociales -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-
   </header>
 
   <!-- Carrito Modal -->
@@ -37,8 +38,28 @@
     </div>
   </div>
 
-  <!-- Sección Inicio -->
- 
+   <!-- Sección Blog -->
+  <section class="blog-section" id="blog">
+    <h2>Blog</h2>
+
+    <!-- Carrusel -->
+    <div class="blog-carousel" id="blogCarousel">
+      <button class="carousel-arrow left" onclick="moveCarousel(-1)">&#60;</button>
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Slides se cargan con JS -->
+      </div>
+      <button class="carousel-arrow right" onclick="moveCarousel(1)">&#62;</button>
+    </div>
+
+    <!-- Listado de posts para vista previa -->
+    <div class="blog-list">
+      <!-- También se puede navegar aquí si cierras detalle -->
+    </div>
+
+    <!-- Post detallado -->
+    <div id="blog-detail" class="blog-detail" style="display:none"></div>
+    <button id="volverBlog" class="volver-blog" style="display:none" onclick="closeBlog()">← Volver al blog</button>
+  </section>
 
   <!-- Sección Productos -->
   <main id="productos">
@@ -123,6 +144,8 @@
     </div>
   </section>
 
+
+
   <!-- Sección Contacto -->
   <section class="contacto" id="contacto">
     <h2>Contacto</h2>
@@ -138,24 +161,25 @@
     </div>
   </section>
 
+  <!-- Iconos redes sociales -->
+  <div class="social-icons">
+    <a href="https://www.facebook.com/tuPerfil" target="_blank" aria-label="Facebook" class="social-icon facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.twitter.com/tuPerfil" target="_blank" aria-label="Twitter" class="social-icon twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/tuPerfil" target="_blank" aria-label="Instagram" class="social-icon instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.pinterest.com/tuPerfil" target="_blank" aria-label="Pinterest" class="social-icon pinterest">
+      <i class="fab fa-pinterest-p"></i>
+    </a>
+  </div>
+
   <!-- Footer -->
   <footer>
     <p>© 2025 Xochikali | Nutrición & Bienestar Femenino</p>
-    <div class="social-icons">
-  <a href="https://www.facebook.com/tuPerfil" target="_blank" aria-label="Facebook" class="social-icon facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://www.twitter.com/tuPerfil" target="_blank" aria-label="Twitter" class="social-icon twitter">
-    <i class="fab fa-twitter"></i>
-  </a>
-  <a href="https://www.instagram.com/tuPerfil" target="_blank" aria-label="Instagram" class="social-icon instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
-  <a href="https://www.pinterest.com/tuPerfil" target="_blank" aria-label="Pinterest" class="social-icon pinterest">
-    <i class="fab fa-pinterest-p"></i>
-  </a>
-</div>
-
   </footer>
 
   <!-- Vincular JavaScript -->

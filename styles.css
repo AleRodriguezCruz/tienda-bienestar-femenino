@@ -252,6 +252,157 @@ h2 {
   color: #c78e7b;
 }
 
+/* Blog */
+.blog-section {
+  background: #f9eef3;
+  border-radius: 18px;
+  margin: 48px auto 40px auto;
+  max-width: 1000px;
+  padding: 50px 16px 38px 16px;
+  text-align: center;
+}
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 18px;
+}
+.blog-post-preview {
+  background: #fff7f7;
+  border-radius: 15px;
+  padding: 26px 32px;
+  box-shadow: 0 2px 10px #eddad3a0;
+  max-width: 340px;
+  min-width: 260px;
+  flex: 1;
+  cursor: pointer;
+  text-align: left;
+  transition: box-shadow 0.2s;
+  border: 1.3px solid #eed8dc;
+}
+.blog-post-preview:hover {
+  box-shadow: 0 6px 25px #d9bacda8;
+}
+.blog-post-preview h3 {
+  color: #a77866;
+  margin-top: 0;
+}
+.blog-date {
+  font-size: 0.95em;
+  color: #c78e7b;
+  margin-bottom: 8px;
+  display: block;
+}
+.leer-mas {
+  color: #b57282;
+  font-size: 0.95em;
+  font-weight: 700;
+}
+/* Imagen en post detalle */
+.blog-img-detalle {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 22px auto;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #ecd9e680;
+}
+/* Post individual */
+.blog-detail {
+  background: #fff7f7;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px #ecd9e6a6;
+  padding: 38px 28px;
+  margin: 0 auto 14px auto;
+  max-width: 640px;
+  text-align: left;
+  color: #70554c;
+}
+.blog-detail h3 {
+  color: #ad6680;
+}
+.volver-blog {
+  background: #e7b6bb;
+  color: #6a3d35;
+  padding: 10px 28px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.05em;
+  margin-bottom: 18px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+}
+.volver-blog:hover {
+  background: #b57282;
+  color: #fff;
+}
+
+/* Carrusel blog */
+.blog-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px auto 38px auto;
+  gap: 0;
+}
+
+.carousel-arrow {
+  background: #e7b6bb;
+  color: #6a3d35;
+  border: none;
+  font-size: 2em;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(181, 153, 142, 0.17);
+  transition: background 0.2s;
+}
+.carousel-arrow:hover { background: #b57282; color:#fff; }
+
+.carousel-track {
+  display: flex;
+  overflow: hidden;
+  width: 340px;
+  min-height: 270px;
+  justify-content: center;
+}
+.carousel-slide {
+  min-width: 320px;
+  margin: 0 10px;
+  background: #fff7f7;
+  border-radius: 13px;
+  box-shadow: 0 2px 8px #eddad3a0;
+  padding: 19px 20px;
+  text-align: center;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.carousel-slide img {
+  width: 90%;
+  max-width: 220px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+.carousel-slide h4 {
+  color: #aa5d8b;
+  margin: 8px 0 10px 0;
+  font-size: 1.07em;
+}
+.carousel-slide p {
+  color: #7a5f44;
+  font-size: 0.98em;
+  margin-bottom: 0;
+}
+
 /* Contacto */
 .contacto {
   background: #fdebe8;
@@ -302,9 +453,55 @@ footer {
   font-size: 14px;
 }
 
-/* Responsive para móviles */
+/* Iconos redes sociales */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 40px 0 24px 0;
+}
+
+.social-icon {
+  background-color: #e7b6bb;
+  color: #6a3d35;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(181, 153, 142, 0.3);
+}
+
+.social-icon:hover {
+  background-color: #b57282;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(181, 153, 142, 0.6);
+}
+
+/* Iconos específicos */
+.social-icon.facebook { background-color: #3b5998; color: white; }
+.social-icon.facebook:hover { background-color: #2d4373; }
+.social-icon.twitter { background-color: #1da1f2; color: white; }
+.social-icon.twitter:hover { background-color: #0d95e8; }
+.social-icon.instagram { 
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  color: white;
+}
+.social-icon.instagram:hover { filter: brightness(0.9); }
+.social-icon.pinterest { background-color: #bd081c; color: white; }
+.social-icon.pinterest:hover { background-color: #8c0615; }
+
+/* Responsive */
 @media screen and (max-width: 900px) {
   .lista-testimonios { flex-direction: column; gap: 22px; }
+}
+
+@media screen and (max-width: 800px) {
+  .blog-list { flex-direction: column; gap: 18px; }
 }
 
 @media screen and (max-width: 768px) {
@@ -312,15 +509,17 @@ footer {
     flex-direction: column;
     align-items: center;
   }
-
   header {
     flex-direction: column;
     gap: 14px;
   }
-
   nav a {
     margin: 0 8px;
   }
+}
+
+@media (max-width:480px) {
+  .cart-content {max-width:95vw;}
 }
 
 /* --- Estilos Carrito Modal --- */
@@ -376,47 +575,3 @@ footer {
   transition: background .22s;
 }
 .btn-checkout:hover { background: #b57282; color: #fff; }
-@media (max-width:480px) {.cart-content {max-width:95vw;}}
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin: 40px 0 24px 0;
-}
-
-.social-icon {
-  background-color: #e7b6bb; /* tono pastel rosa */
-  color: #6a3d35; /* tono rose gold oscuro */
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  box-shadow: 0 2px 8px rgba(181, 153, 142, 0.3);
-}
-
-.social-icon:hover {
-  background-color: #b57282; /* rosa más intenso en hover */
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(181, 153, 142, 0.6);
-}
-
-/* Iconos específicos (opcional para personalizar colores de cada red) */
-.social-icon.facebook { background-color: #3b5998; color: white; }
-.social-icon.facebook:hover { background-color: #2d4373; }
-
-.social-icon.twitter { background-color: #1da1f2; color: white; }
-.social-icon.twitter:hover { background-color: #0d95e8; }
-
-.social-icon.instagram { 
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-  color: white;
-}
-.social-icon.instagram:hover { filter: brightness(0.9); }
-
-.social-icon.pinterest { background-color: #bd081c; color: white; }
-.social-icon.pinterest:hover { background-color: #8c0615; }
