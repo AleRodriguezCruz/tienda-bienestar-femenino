@@ -1,3 +1,6 @@
+// Variable global para carrito
+let cart = [];
+
 // Filtrar productos por categoría
 function filterProducts(category, event) {
   const cards = document.querySelectorAll('.products .card');
@@ -16,6 +19,25 @@ function filterProducts(category, event) {
   event.target.classList.add('active');
 }
 
+// --- Carrito ---
+
+// Agregar producto al carrito
+function addToCart(productName) {
+  const index = cart.findIndex(item => item.name === productName);
+  if (index !== -1) {
+    cart[index].qty += 1;
+  } else {
+    const productCard = Array.from(document.querySelectorAll('.card'))
+      .find(card => card.querySelector('h3').textContent === productName);
+    const price = productCard ? parseFloat(productCard.querySelector('.price').textContent.replace('$','')) : 0;
+
+    cart.push({ name: productName, qty: 1, price });
+  }
+  renderCartItems();
+  updateCartDisplay();
+  alert(`Producto "${productName}" añadido al carrito.`);
+}
+
 // Mostrar carrito (modal)
 function mostrarCarrito() {
   document.getElementById('cartModal').style.display = "block";
@@ -27,35 +49,55 @@ function closeCart() {
   document.getElementById('cartModal').style.display = "none";
 }
 
-// Actualizar contador carrito (ejemplo básico)
-function updateCartDisplay() {
-  // Aquí deberías actualizar con el número real de productos, este es solo ejemplo
-  const count = getCartCount(); // Suponiendo tienes esta función definida
-  document.getElementById('cartCount').textContent = count;
+// Renderizar productos en carrito
+function renderCartItems() {
+  const cartItemsDiv = document.getElementById('cartItems');
+  cartItemsDiv.innerHTML = '';
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartItemsDiv.innerHTML = '<p style="color:#b57282;">Tu carrito está vacío.</p>';
+  } else {
+    cart.forEach((item, i) => {
+      total += item.qty * item.price;
+      cartItemsDiv.innerHTML += `
+        <div class="cart-item">
+          <span class="cart-item-name">${item.name}</span>
+          <div class="cart-item-qty">
+            <button class="qty-btn" onclick="changeQty(${i}, -1)">-</button>
+            <span>${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${i}, 1)">+</button>
+            <button class="remove-item" onclick="removeItem(${i})">&times;</button>
+          </div>
+        </div>
+      `;
+    });
+  }
+  document.getElementById('cartTotal').textContent = total ? `Total: $${total.toFixed(2)}` : '';
+  updateCartDisplay(); // Mantiene sincronizado contador visual
 }
 
-
-// Cambiar cantidad artículo
+// Cambiar cantidad de un artículo en el carrito
 function changeQty(index, delta) {
   cart[index].qty += delta;
   if (cart[index].qty <= 0) cart.splice(index, 1);
   renderCartItems();
 }
 
-// Eliminar producto
+// Eliminar producto del carrito
 function removeItem(index) {
   cart.splice(index, 1);
   renderCartItems();
 }
 
-// Obtener total productos en carrito
+// Obtener cantidad total de productos en carrito
 function getCartCount() {
   return cart.reduce((sum, item) => sum + item.qty, 0);
 }
 
-// Actualizar contador del carrito visible
+// Actualizar el contador del carrito visible (solo número)
 function updateCartDisplay() {
-  document.querySelector('.carrito').textContent = `Carrito (${getCartCount()})`;
+  document.getElementById('cartCount').textContent = getCartCount();
 }
 
 // Finalizar compra (simulación)
@@ -70,21 +112,14 @@ function checkoutCart() {
   updateCartDisplay();
 }
 
-// Formulario contacto
+// --- Formulario contacto ---
 function enviarContacto(e) {
   e.preventDefault();
   alert("¡Mensaje enviado! Pronto te contactaremos.");
   e.target.reset();
 }
 
-// Inicializar contador carrito al cargar
-document.addEventListener('DOMContentLoaded', () => {
-  updateCartDisplay();
-  renderCarousel();
-});
-
-
-// ----------- Blog con imágenes y carrusel ------------
+// --- Blog con imágenes y carrusel ---
 
 const posts = {
   'bienestar': {
@@ -147,6 +182,26 @@ function moveCarousel(dir) {
   renderCarousel();
 }
 
+// Renderizar listado de previews con imágenes
+function renderBlogList() {
+  const blogList = document.querySelector('.blog-list');
+  blogList.innerHTML = '';
+  for (const key of postKeys) {
+    const post = posts[key];
+    const previewDiv = document.createElement('div');
+    previewDiv.className = 'blog-post-preview';
+    previewDiv.onclick = () => openBlog(key);
+    previewDiv.innerHTML = `
+      <img src="${post.image}" alt="${post.title}" class="blog-img-preview" />
+      <h3>${post.title}</h3>
+      <span class="blog-date">${post.date}</span>
+      <p>${post.excerpt}</p>
+      <span class="leer-mas">Leer más →</span>
+    `;
+    blogList.appendChild(previewDiv);
+  }
+}
+
 // Mostrar un post individual en el blog
 function openBlog(postKey) {
   const post = posts[postKey];
@@ -166,3 +221,10 @@ function closeBlog() {
   document.querySelector('.blog-list').style.display = 'flex';
   document.getElementById('blogCarousel').style.display = 'flex';
 }
+
+// Al cargar la página inicializar contador, carrusel y lista blog
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartDisplay();
+  renderCarousel();
+  renderBlogList();
+});
