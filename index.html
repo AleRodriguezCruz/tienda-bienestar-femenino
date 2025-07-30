@@ -11,32 +11,40 @@
   <!-- Font Awesome para iconos sociales -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+
   <!-- Vincular CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">Xochikali</div>
-    <nav>
-      <a href="#inicio" class="active">Inicio</a>
-      <a href="#productos">Productos</a>
-      <a href="#testimonios">Testimonios</a>
-      <a href="#blog">Blog</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-    <div class="carrito" onclick="mostrarCarrito()">Carrito (0)</div>
-  </header>
-
-  <!-- Carrito Modal -->
-  <div id="cartModal" class="cart-modal">
-    <div class="cart-content">
-      <span class="close-cart" onclick="closeCart()">&times;</span>
-      <h2>Carrito de Compras</h2>
-      <div id="cartItems"></div>
-      <div id="cartTotal" class="cart-total"></div>
-      <button class="btn-checkout" onclick="checkoutCart()">Finalizar compra</button>
-    </div>
+ <header>
+  <div class="logo">Xochikali</div>
+  <nav>
+    <a href="#inicio" class="active">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#blog">Blog</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="carrito" onclick="mostrarCarrito()">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="carrito-texto">Carrito (<span id="cartCount">0</span>)</span>
   </div>
+</header>
+
+
+ <!-- Carrito Modal -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-content">
+    <span class="close-cart" onclick="closeCart()">&times;</span>
+    <h2>Carrito de Compras</h2>
+    <div id="cartItems"></div>
+    <div id="cartTotal" class="cart-total"></div>
+    <button class="btn-checkout" onclick="checkoutCart()">Finalizar compra</button>
+  </div>
+</div>
+
 
    <!-- Sección Blog -->
   <section class="blog-section" id="blog">
