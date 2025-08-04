@@ -90,7 +90,7 @@ nav a:hover {
 .hero-section {
   position: relative;
   width: 100vw;
-  height: 90vh;  /* o 100vh si quieres que ocupe toda la pantalla */
+  height: 100vh;  /* o 100vh si quieres que ocupe toda la pantalla */
   min-height: 350px;
   max-height: 760px;
   overflow: hidden;
@@ -271,5 +271,6 @@ footer {
     height: 180px !important;
   }
 }
+
 
 
