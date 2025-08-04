@@ -238,39 +238,37 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  nav {
-    gap: 14px;
-  }
-}
-
 @media (max-width: 650px) {
-  .hero-section {
-    height: 55vh;
-    min-height: 230px;
-  }
-  .hero-content h1 {
-    font-size: 2em;
-  }
   .container.header-flex {
     flex-wrap: wrap;
-    height: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
   nav {
+    flex: 1 1 100%;
+    display: flex;
     justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    order: 2;
   }
   .icons-header {
+    order: 3;
     margin-top: 10px;
+    flex-grow: 0;
+    display: flex;
+    gap: 20px;
+  }
+  img.logo-header {
+    order: 1;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    height: 38px;
   }
 }
 
-@media (max-width: 480px) {
-  .beneficio-item {
-    width: 90vw !important;
-    height: 180px !important;
-  }
-}
+
 
 
 
