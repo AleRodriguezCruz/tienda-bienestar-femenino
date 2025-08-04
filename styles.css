@@ -290,6 +290,7 @@ footer {
   }
 }
 
+<<<<<<< HEAD
 @media (max-width: 480px) {
   .hero-section {
     height: 50vh;             /* Menor altura para que no sea tan alta */
@@ -314,5 +315,9 @@ footer {
     padding: 10px 20px;
   }
 }
+=======
+
+
+>>>>>>> 15e4aaea56f0b46cae20d7504c2a36949e8fb169
 
 
