@@ -10,6 +10,12 @@
 </head>
 <body>
 
+<!-- Barra rotativa superior -->
+<div class="top-banner">
+  Su Partner Business &nbsp; • &nbsp; Su Partner Lifestyle &nbsp; • &nbsp; Su Partner Wellness &nbsp; • &nbsp; Su Partner Business &nbsp; • &nbsp; Su Partner Lifestyle &nbsp; • &nbsp; Su Partner Wellness
+</div>
+
+<!-- Header fijo -->
 <header class="nav-header">
   <div class="container header-flex">
     <img src="img/logo-xochikali.png" alt="Xochikali Logo" class="logo-header" />
@@ -28,16 +34,30 @@
   </div>
 </header>
 
+<!-- Hero con imagen y botón -->
 <section class="hero-section">
   <div class="hero-bg"></div>
   <div class="hero-content">
     <h1>Su socio</h1>
-    <button class="hero-btn" onclick="location.href='#video'">
-      <i class="fas fa-play"></i> Ver el video
-    </button>
+    <button class="hero-btn" onclick="location.href='#video-intro'"><i class="fas fa-play"></i> Ver el video</button>
   </div>
 </section>
 
+<!-- Beneficios con imágenes -->
+<section class="beneficios">
+  <h2>Nutrición de precisión, Precisamente para ti</h2>
+  <p>Nos tomamos su salud personalmente. Optimiza tu bienestar con una precisión natural <strong>Gran</strong>jaeuticales que apuntan a la causa raíz de sus desequilibrios de salud.</p>
+  <h3>Soluciones <em>Eso último.</em></h3>
+  <div class="beneficios-grid">
+    <div class="beneficio-item" style="background-image: url('desintoxicacion.jpg');">Desintoxicación</div>
+    <div class="beneficio-item" style="background-image: url('personal_cuidado.jpg');">Personal Cuidado</div>
+    <div class="beneficio-item" style="background-image: url('diario_salud.jpg');">A diario Salud</div>
+    <div class="beneficio-item" style="background-image: url('proteina.jpg');">Proteína</div>
+    <div class="beneficio-item" style="background-image: url('bienestar_tech.jpg');">Bienestar Tech</div>
+  </div>
+</section>
+
+<!-- Secciones: Tienda, PID, Eventos, Viajes, Acerca de, Diario -->
 <section id="tienda" class="main-section">
   <h2>Tienda</h2>
   <p>Aquí va el catálogo de productos...</p>
@@ -50,17 +70,25 @@
 
 <section id="eventos" class="main-section">
   <h2>Eventos</h2>
-  <p>Listado de eventos recientes y futuros.</p>
+  <ul class="event-list">
+    <li><strong>25 Agosto 2025:</strong> Taller “Nutrición consciente” en CDMX</li>
+    <li><strong>12 Septiembre 2025:</strong> Webinar sobre bienestar femenino</li>
+    <li><strong>30 Octubre 2025:</strong> Encuentro anual de socios en línea</li>
+  </ul>
 </section>
 
 <section id="viajes" class="main-section">
   <h2>Viajes</h2>
-  <p>Información sobre viajes.</p>
+  <p>Información sobre próximos viajes de bienestar y retiros exclusivos.</p>
+  <ul class="travel-list">
+    <li>Retiro de yoga en Valle de Bravo - Noviembre 2025</li>
+    <li>Encuentro de bienestar integral en Oaxaca - Marzo 2026</li>
+  </ul>
 </section>
 
 <section id="acerca" class="main-section">
   <h2>Acerca de</h2>
-  <p>Sobre la empresa o proyecto.</p>
+  <p>Sobre la empresa o el proyecto.</p>
 </section>
 
 <section id="diario" class="main-section">
@@ -68,6 +96,7 @@
   <p>Noticias, blog o actualizaciones frecuentes.</p>
 </section>
 
+<!-- Footer -->
 <footer>
   <small>© 2025 Xochikali - Todos los derechos reservados</small>
 </footer>
