@@ -270,23 +270,27 @@ footer {
 
 @media (max-width: 480px) {
   .hero-section {
-    height: 50vh;
+    height: 50vh;             /* Menor altura para que no sea tan alta */
+    max-height: 300px;        /* Limita altura máxima */
   }
   .hero-bg {
     width: 100vw;
     height: 50vh;
+    max-height: 300px;
     object-fit: cover;
+    object-position: center top;  /* Centra la parte superior del video para evitar que se corte lo principal */
   }
   .hero-content {
-    padding: 0 10px;
+    padding: 0 15px;
   }
   .hero-content h1 {
-    font-size: 1.6rem;
-    line-height: 1.2;
+    font-size: 1.5rem;
+    line-height: 1.1;
   }
   .hero-btn {
     font-size: 0.9rem;
     padding: 10px 20px;
   }
 }
+
 
