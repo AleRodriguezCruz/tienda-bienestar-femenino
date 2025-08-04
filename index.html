@@ -1,186 +1,76 @@
-/* Reset y base */
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xochikali</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-body, html {
-  margin: 0; padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: #f7faf6;
-  color: #4a4a4a;
-}
+<header class="nav-header">
+  <div class="container header-flex">
+    <img src="img/logo-xochikali.png" alt="Xochikali Logo" class="logo-header" />
+    <nav>
+      <a href="#tienda">Tienda</a>
+      <a href="#pid">PID</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#viajes">Viajes</a>
+      <a href="#acerca">Acerca de</a>
+      <a href="#diario">Diario</a>
+    </nav>
+    <div class="icons-header">
+      <a href="#usuario" aria-label="Usuario"><i class="far fa-user"></i></a>
+      <a href="#cart" aria-label="Carrito"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </div>
+</header>
 
-/* Header fijo y limpio */
-.nav-header {
-  background: #fff;
-  position: fixed;
-  top: 0; left: 0; width: 100%;
-  border-bottom: 1px solid #e8e8e8;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-}
+<section class="hero-section">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Su socio</h1>
+    <button class="hero-btn" onclick="location.href='#video'">
+      <i class="fas fa-play"></i> Ver el video
+    </button>
+  </div>
+</section>
 
-.container.header-flex {
-  max-width: 1200px;
-  width: 95%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-}
+<section id="tienda" class="main-section">
+  <h2>Tienda</h2>
+  <p>Aquí va el catálogo de productos...</p>
+</section>
 
-/* Logo */
-.logo-header {
-  height: 38px;
-}
+<section id="pid" class="main-section">
+  <h2>PID</h2>
+  <p>Sección informativa.</p>
+</section>
 
-/* Navegación horizontal */
-nav {
-  display: flex;
-  gap: 25px;
-}
+<section id="eventos" class="main-section">
+  <h2>Eventos</h2>
+  <p>Listado de eventos recientes y futuros.</p>
+</section>
 
-nav a {
-  text-decoration: none;
-  color: #296943;
-  font-weight: 600;
-  font-size: 1em;
-  padding: 10px 2px;
-  transition: color 0.3s ease;
-}
-nav a:hover {
-  color: #31875c;
-}
+<section id="viajes" class="main-section">
+  <h2>Viajes</h2>
+  <p>Información sobre viajes.</p>
+</section>
 
-/* Íconos usuario y carrito */
-.icons-header a {
-  color: #666;
-  font-size: 1.25em;
-  margin-left: 20px;
-  transition: color 0.3s ease;
-}
-.icons-header a:hover {
-  color: #31875c;
-}
+<section id="acerca" class="main-section">
+  <h2>Acerca de</h2>
+  <p>Sobre la empresa o proyecto.</p>
+</section>
 
-/* Hero grande */
-.hero-section {
-  margin-top: 70px;
-  position: relative;
-  width: 100vw;
-  height: 90vh;
-  min-height: 350px;
-  max-height: 760px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('img/tu-imagen-hero.jpg') center center/cover no-repeat;
-  filter: brightness(0.88);
-  z-index: 1;
-}
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-  max-width: 700px;
-  padding: 0 10px;
-}
-.hero-content h1 {
-  font-size: 3.2em;
-  font-weight: 700;
-  text-shadow: 1px 3px 15px rgba(0,0,0,0.3);
-  margin-bottom: 16px;
-}
-.hero-btn {
-  background: #387344;
-  color: white;
-  border: none;
-  border-radius: 22px;
-  padding: 16px 40px;
-  font-weight: 600;
-  font-size: 1.1em;
-  cursor: pointer;
-  box-shadow: 0 2px 15px rgba(56,115,68,0.5);
-  transition: background 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.hero-btn i {
-  font-size: 1.17em;
-}
-.hero-btn:hover {
-  background: #60a97b;
-}
+<section id="diario" class="main-section">
+  <h2>Diario</h2>
+  <p>Noticias, blog o actualizaciones frecuentes.</p>
+</section>
 
-/* Secciones principales */
-.main-section {
-  max-width: 1020px;
-  margin: 40px auto;
-  padding: 40px 20px;
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 6px 15px rgba(42, 70, 50, 0.13);
-  text-align: center;
-}
-.main-section h2 {
-  color: #296943;
-  font-size: 2em;
-  margin-top: 0;
-}
-.main-section p {
-  font-size: 1.1em;
-  color: #4a4a4a;
-  margin-top: 8px;
-}
+<footer>
+  <small>© 2025 Xochikali - Todos los derechos reservados</small>
+</footer>
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px 10px;
-  background: #e8e8e8;
-  color: #316955;
-  font-size: 0.95em;
-}
-
-/* Responsive para móviles */
-@media (max-width: 900px) {
-  nav {
-    gap: 14px;
-  }
-}
-
-@media (max-width: 650px) {
-  .hero-section {
-    height: 55vh;
-    min-height: 230px;
-  }
-  .hero-content h1 {
-    font-size: 2em;
-  }
-  .container.header-flex {
-    flex-wrap: wrap;
-    height: auto;
-  }
-  nav {
-    justify-content: center;
-    width: 100%;
-  }
-  .icons-header {
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero-btn {
-    padding: 14px 20px;
-    font-size: 1em;
-  }
-}
+</body>
+</html>
