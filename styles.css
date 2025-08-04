@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
 body, html {
   margin: 0; padding: 0;
   font-family: 'Montserrat', sans-serif;
   background: #f7faf6;
-=======
+
 /* Fuente global y reset */
 body {
   margin: 0;
@@ -12,10 +12,10 @@ body {
   background: linear-gradient(180deg, #ffe5d0 0%, #f6d2b7 100%);
   min-height: 100vh;
   color: #6B4F3A;
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
 }
 
-<<<<<<< HEAD
+
 a { color: inherit; }
 
 /* HEADER STICKY */
@@ -36,31 +36,31 @@ a { color: inherit; }
   justify-content: space-between;
   padding: 0 3vw;
   height: 70px;
-=======
+
 /* Header minimalista */
 header {
   width: 100%;
   background: transparent;
   text-align: center;
   margin-top: 30px;
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
 }
 
-<<<<<<< HEAD
+
 .logo-header {
   height: 38px;
   margin-right: 22px;
-=======
+
 .logo {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 1px;
   color: #b9835f;
   letter-spacing: 2px;
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
 }
 
-<<<<<<< HEAD
+
 nav {
   display: flex;
   gap: 25px;
@@ -178,13 +178,13 @@ h2 {
   font-size: 1.1rem;
   font-weight: 600;
   margin: 6px 0 10px;
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
 }
-<<<<<<< HEAD
+
 .hero-btn {
   background: #306e44;
   color: #fff;
-=======
+
 
 .card .description {
   color: #a47e5e;
@@ -217,29 +217,26 @@ h2 {
 .btn-add-cart {
   padding: 10px 28px;
   border-radius: 24px;
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
   border: none;
-<<<<<<< HEAD
   border-radius: 22px;
   font-size: 1.14em;
   padding: 16px 40px;
-=======
+
   background: #bb9568;
   color: #fff;
   font-size: 1rem;
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
   font-weight: 600;
   letter-spacing: 1px;
   transition: background 0.2s;
   cursor: pointer;
-<<<<<<< HEAD
+
   box-shadow: 0 2px 10px rgba(76,116,41,0.10);
   transition: background .18s;
   margin-top: 10px;
-=======
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
 }
-<<<<<<< HEAD
+
 .hero-btn:hover { background: #60a97b; }
 
 @media (max-width: 650px){
@@ -247,8 +244,7 @@ h2 {
   .hero-content h1 { font-size: 2em; }
 =======
 .btn-add-cart:hover {
-  background: #b9835f;
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
 }
 
 <<<<<<< HEAD
@@ -335,7 +331,7 @@ footer {
   font-weight: 600;
   cursor: pointer;
   margin-top: 8px;
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
 }
 
 <<<<<<< HEAD
@@ -383,4 +379,4 @@ footer {
 }
 
 
->>>>>>> 8fd0572eb2cea4a1a84ef979755f905fdd24bb04
+
