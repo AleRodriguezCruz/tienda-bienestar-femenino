@@ -90,7 +90,7 @@ nav a:hover {
 section.hero-section {
   margin-top: 102px; /* banner + header */
   position: relative;
-  width: 100vw;
+  width: 150vw;
   height: 90vh;
   min-height: 350px;
   max-height: 760px;
@@ -265,3 +265,4 @@ footer {
     height: 180px !important;
   }
 }
+
