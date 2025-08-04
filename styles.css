@@ -268,6 +268,28 @@ footer {
   }
 }
 
+@media (max-width: 480px) {
+  .hero-section {
+    height: 50vh;
+  }
+  .hero-bg {
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+  }
+  .hero-content {
+    padding: 0 10px;
+  }
+  .hero-content h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+  .hero-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
 
 
 
