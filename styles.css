@@ -90,28 +90,26 @@ nav a:hover {
 .hero-section {
   position: relative;
   width: 100vw;
-  height: 100vh;  /* o 100vh si quieres que ocupe toda la pantalla */
+  height: 100vh;
   min-height: 350px;
   max-height: 760px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 102px; /* si tienes header fijo, ajusta este margen */
+  margin-top: 102px;
 }
-
 .hero-bg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;    /* ancho total de la ventana */
-  height: 100vh;   /* altura total de la ventana */
-  object-fit: cover; /* cubrir el área sin deformar */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   z-index: 1;
   filter: brightness(0.85);
   pointer-events: none;
 }
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -148,53 +146,121 @@ nav a:hover {
   background: #60a97b;
 }
 
-/* Beneficios */
-section.beneficios {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 15px;
+/* Beneficios carrusel */
+.beneficios > h2 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: #3f3f3f;
+  margin-bottom: 0.3em;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
-  color: #4a4a4a;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
-section.beneficios h2 {
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-section.beneficios p {
-  font-size: 1rem;
+.beneficios > p {
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #6a6a6a;
   max-width: 700px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 1.5em auto;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
-section.beneficios h3 {
-  font-size: 1.4rem;
+.beneficios > h3 {
   font-style: italic;
-  margin-bottom: 35px;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #7a5c4c;
+  letter-spacing: 0.04em;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
-.beneficios-grid {
-  display: flex;
-  gap: 18px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.beneficio-item {
+
+.carousel-container {
   position: relative;
-  width: 180px;
-  height: 180px;
+  max-width: calc(100vw - 40px);
+  margin: 0 20px;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.carousel-slide {
+  flex: 0 0 calc((100% - 72px) / 5);
+  height: 280px;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  border-radius: 12px;
-  cursor: pointer;
+  border-radius: 2px;
+  margin-right: 18px;
   display: flex;
   align-items: flex-end;
-  padding: 12px 12px 25px;
+  padding: 15px 20px;
   color: white;
   font-weight: 600;
-  font-size: 1rem;
-  text-shadow: 0 0 9px rgba(0,0,0,0.45);
-  transition: transform 0.3s ease;
+  font-size: 1.1rem;
+  text-shadow: 0 0 9px rgba(0,0,0,0.55);
+  user-select: none;
+  cursor: grab;
+  background-color: #000;
 }
-.beneficio-item:hover {
-  transform: scale(1.05);
+.carousel-slide:last-child {
+  margin-right: 0;
+}
+.carousel-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  cursor: pointer;
+  position: absolute;
+  top: 42%;
+  background: rgba(56,115,68,0.85);
+  color: white;
+  border: none;
+  width: 36px;
+  height: 60px;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 10;
+  border-radius: 6px;
+  user-select: none;
+}
+.carousel-container:hover .carousel-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+.carousel-btn.prev {
+  left: 12px;
+}
+.carousel-btn.next {
+  right: 12px;
+}
+@media (max-width: 500px){
+  .carousel-slide {
+    width: 200px;
+    height: 140px;
+    background-size: cover;
+    font-size: 1rem;
+  }
+  .carousel-btn {
+    top: 38%;
+    width: 30px;
+    height: 50px;
+    font-size: 24px;
+  }
 }
 
 /* Secciones informativas */
@@ -267,7 +333,6 @@ footer {
     height: 38px;
   }
 }
-
 @media (max-width: 480px) {
   .hero-section {
     height: 50vh;
@@ -290,34 +355,209 @@ footer {
   }
 }
 
-<<<<<<< HEAD
-@media (max-width: 480px) {
-  .hero-section {
-    height: 50vh;             /* Menor altura para que no sea tan alta */
-    max-height: 300px;        /* Limita altura máxima */
-  }
-  .hero-bg {
-    width: 100vw;
-    height: 50vh;
-    max-height: 300px;
-    object-fit: cover;
-    object-position: center top;  /* Centra la parte superior del video para evitar que se corte lo principal */
-  }
-  .hero-content {
-    padding: 0 15px;
-  }
-  .hero-content h1 {
-    font-size: 1.5rem;
-    line-height: 1.1;
-  }
-  .hero-btn {
-    font-size: 0.9rem;
-    padding: 10px 20px;
+/* Beneficios títulos y texto */
+.beneficios > h2 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  color: #3f3f3f;
+  margin-bottom: 0.3em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.beneficios > p {
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #6a6a6a;
+  max-width: 700px;
+  margin: 0 auto 1.5em auto;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.beneficios > h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #7a5c4c;
+  letter-spacing: 0.04em;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+/* Productos carrusel con tarjetas más grandes y 3 por vista */
+.productos-carousel-container {
+  position: relative;
+  max-width: calc(100vw - 40px);
+  margin: 0 20px 40px 20px;
+  overflow: hidden;
+  padding: 20px 0;
+}
+.productos-carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+.productos-carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.productos-carousel-slide {
+  flex: 0 0 calc((100% - 54px) / 5); /* 3 productos por vista */
+  height: 320px; /* mayor altura que beneficios */
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-right: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background: none;
+}
+.productos-carousel-slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.carousel-image {
+  width: 100%;
+  height: 220px; /* imagen más alta */
+  background-size: cover;
+  background-position: center;
+  border-radius: 0px 0px 0 0;
+}
+.carousel-info {
+  padding: 12px 15px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.product-name {
+  font-weight: 700;
+  color: #296943;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.add-cart-btn {
+  background: #387344;
+  border-radius: 18px;
+  padding: 8px 20px;
+  font-weight: 600;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  max-width: 150px;
+}
+.add-cart-btn:hover {
+  background: #60a97b;
+}
+.productos-carousel-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  cursor: pointer;
+  position: absolute;
+  top: 42%;
+  background: rgba(56,115,68,0.85);
+  color: white;
+  border: none;
+  width: 36px;
+  height: 60px;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 10;
+  border-radius: 6px;
+  user-select: none;
+}
+.productos-carousel-container:hover .productos-carousel-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+.productos-carousel-btn.prev {
+  left: 12px;
+}
+.productos-carousel-btn.next {
+  right: 12px;
+}
+
+/* Separación elegante entre beneficios y productos */
+.beneficios {
+  padding-bottom: 60px;
+  position: relative;
+}
+.productos::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 6px;
+  background: linear-gradient(90deg, #387344, #60a97b);
+  border-radius: 0;
+  margin: -30px auto 30px auto;
+}
+.productos {
+  padding-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.productos > h2 {
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #296943;
+  text-align: center;
+  margin-bottom: 0.3em;
+  font-family: 'Montserrat', sans-serif;
+}
+.productos > p {
+  max-width: 720px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 0 auto 1.8em auto;
+  font-family: 'Montserrat', sans-serif;
+}
+.productos > h3 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #7a5c4c;
+  letter-spacing: 0.04em;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Responsive para productos */
+@media (max-width: 768px) {
+  .productos-carousel-slide {
+    flex: 0 0 calc((100% - 42px) / 5);
+    height: 280px;
   }
 }
-=======
-
-
->>>>>>> 15e4aaea56f0b46cae20d7504c2a36949e8fb169
-
-
+@media (max-width: 480px) {
+  .productos-carousel-slide {
+    flex: 0 0 calc(100% - 20px);
+    margin-right: 15px;
+    height: 220px;
+  }
+  .productos-carousel-btn {
+    top: 38%;
+    width: 30px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+.modal.active {
+  display: flex !important;
+}
