@@ -1,46 +1,54 @@
-/* Reset y base */
+/* Reset */
 * {
-  box-sizing: border-box;
+  margin: 0; padding: 0; box-sizing: border-box;
 }
 
 body, html {
-  margin: 0; padding: 0;
   font-family: 'Montserrat', sans-serif;
   background: #f7faf6;
   color: #4a4a4a;
 }
 
-/* Header fijo y limpio */
-.nav-header {
-  background: #fff;
-  position: fixed;
-  top: 0; left: 0; width: 100%;
-  border-bottom: 1px solid #e8e8e8;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
+/* Barra superior rotativa */
+.top-banner {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 8px 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.top-banner::-webkit-scrollbar {
+  display: none;
 }
 
+/* Header fijo */
+header.nav-header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  z-index: 1000;
+}
 .container.header-flex {
   max-width: 1200px;
-  width: 95%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  padding: 0 3vw;
 }
-
-/* Logo */
-.logo-header {
+img.logo-header {
   height: 38px;
 }
-
-/* Navegación horizontal */
 nav {
   display: flex;
   gap: 25px;
 }
-
 nav a {
   text-decoration: none;
   color: #296943;
@@ -52,8 +60,6 @@ nav a {
 nav a:hover {
   color: #31875c;
 }
-
-/* Íconos usuario y carrito */
 .icons-header a {
   color: #666;
   font-size: 1.25em;
@@ -64,9 +70,9 @@ nav a:hover {
   color: #31875c;
 }
 
-/* Hero grande */
-.hero-section {
-  margin-top: 70px;
+/* Hero */
+section.hero-section {
+  margin-top: 102px; /* banner + header */
   position: relative;
   width: 100vw;
   height: 90vh;
@@ -80,14 +86,14 @@ nav a:hover {
 .hero-bg {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: url('img/tu-imagen-hero.jpg') center center/cover no-repeat;
-  filter: brightness(0.88);
+  background: url('img/hero-fondo.jpg') center/cover no-repeat;
+  filter: brightness(0.85);
   z-index: 1;
 }
 .hero-content {
   position: relative;
   z-index: 2;
-  color: white;
+  color: #fff;
   text-align: center;
   max-width: 700px;
   padding: 0 10px;
@@ -120,7 +126,56 @@ nav a:hover {
   background: #60a97b;
 }
 
-/* Secciones principales */
+/* Beneficios */
+section.beneficios {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 15px;
+  text-align: center;
+  color: #4a4a4a;
+}
+section.beneficios h2 {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+section.beneficios p {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+}
+section.beneficios h3 {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-bottom: 35px;
+}
+.beneficios-grid {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.beneficio-item {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 12px 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-shadow: 0 0 9px rgba(0,0,0,0.45);
+  transition: transform 0.3s ease;
+}
+.beneficio-item:hover {
+  transform: scale(1.05);
+}
+
+/* Secciones informativas */
 .main-section {
   max-width: 1020px;
   margin: 40px auto;
@@ -135,22 +190,32 @@ nav a:hover {
   font-size: 2em;
   margin-top: 0;
 }
-.main-section p {
+.main-section p, .event-list, .travel-list {
   font-size: 1.1em;
   color: #4a4a4a;
   margin-top: 8px;
 }
+.event-list, .travel-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 650px;
+  margin: 12px auto 0 auto;
+}
+.event-list li, .travel-list li {
+  border-bottom: 1px solid #ddd;
+  padding: 12px 0;
+}
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 20px 10px;
   background: #e8e8e8;
   color: #316955;
   font-size: 0.95em;
+  padding: 20px 0;
+  text-align: center;
 }
 
-/* Responsive para móviles */
+/* Responsive */
 @media (max-width: 900px) {
   nav {
     gap: 14px;
@@ -178,9 +243,10 @@ footer {
   }
 }
 
-@media (max-width: 400px) {
-  .hero-btn {
-    padding: 14px 20px;
-    font-size: 1em;
+@media (max-width: 480px) {
+  .beneficio-item {
+    width: 90vw !important;
+    height: 180px !important;
   }
 }
+</style>
