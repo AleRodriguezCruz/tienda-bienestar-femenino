@@ -183,10 +183,15 @@ nav a:hover {
 .carousel-container {
   position: relative;
   max-width: calc(100vw - 40px);
-  margin: 0 20px;
+  width: 1500px;
+  margin: 0 auto;
   overflow: hidden;
   padding: 20px 0;
+  display: block;  /* Asegura que el elemento se comporte como bloque */
+  align-self: center; /* Si quieres centrarlo en eje vertical también */
+  margin: 0 auto;
 }
+
 .carousel-track-container {
   overflow: hidden;
   width: 100%;
@@ -356,17 +361,18 @@ footer {
 }
 
 /* Beneficios títulos y texto */
-.beneficios > h2 {
-  font-weight: 300;
-  font-size: 2.5rem;
-  line-height: 1.15;
-  color: #3f3f3f;
-  margin-bottom: 0.3em;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  max-width: 720px;
+.beneficios  {
+  padding-top: 40px;
   margin-left: auto;
   margin-right: auto;
+}
+.beneficios > h2 {
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #296943;
+  text-align: center;
+  margin-bottom: 0.3em;
+  font-family: 'Montserrat', sans-serif;
 }
 .beneficios > p {
   font-weight: 400;
@@ -409,7 +415,7 @@ footer {
   margin: 0;
 }
 .productos-carousel-slide {
-  flex: 0 0 calc((100% - 54px) / 5); /* 3 productos por vista */
+  flex: 0 0 calc((100% - 54px) / 4); /* 3 productos por vista */
   height: 320px; /* mayor altura que beneficios */
   display: flex;
   flex-direction: column;
@@ -427,11 +433,12 @@ footer {
 }
 .carousel-image {
   width: 100%;
-  height: 220px; /* imagen más alta */
-  background-size: cover;
-  background-position: center;
-  border-radius: 0px 0px 0 0;
+  height: 100%;
+  background-size: contain; /* o 'cover' depende del efecto que quieras */
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+
 .carousel-info {
   padding: 12px 15px;
   background: #fff;
@@ -560,4 +567,19 @@ footer {
 }
 .modal.active {
   display: flex !important;
+}
+.see-more-btn {
+  background-color: #387344;      /* Color de fondo (verde) */
+  color: white;                  /* Color del texto */
+  border: none;                  /* Sin borde */
+  padding: 10px 18px;            /* Espaciado interno */
+  border-radius: 6px;            /* Bordes redondeados */
+  cursor: pointer;               /* Cambia el cursor al pasar el ratón */
+  font-size: 14px;               /* Tamaño de letra */
+  transition: background-color 0.3s ease; /* Transición suave al cambiar colores */
+  font-family: 'Montserrat', sans-serif; /* Usa la fuente Montserrat que ya cargaste */
+}
+
+.see-more-btn:hover {
+  background-color: #2c5c2e;     /* Color más oscuro al pasar el cursor */
 }
