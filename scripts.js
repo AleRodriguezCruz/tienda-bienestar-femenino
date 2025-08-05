@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productosSlides = Array.from(productosTrack.children);
     const productosNextBtn = productosContainer.querySelector('.productos-carousel-btn.next');
     const productosPrevBtn = productosContainer.querySelector('.productos-carousel-btn.prev');
-    const productosSlidesToShow = 5;
+    const productosSlidesToShow = 4;
 
     let productosSlideIndex = 0;
 
@@ -186,3 +186,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+function updateCartCount() {
+  const totalItems = Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
+  console.log('Total items en carrito:', totalItems); // <-- depurar
+  if (cartCountEl) {
+    cartCountEl.textContent = totalItems;
+    cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
+  }
+}
+
