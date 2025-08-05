@@ -92,7 +92,7 @@ nav a:hover {
   width: 100vw;
   height: 100vh;
   min-height: 350px;
-  max-height: 760px;
+  max-height: 900px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -101,15 +101,15 @@ nav a:hover {
 }
 .hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   object-fit: cover;
   z-index: 1;
-  filter: brightness(0.85);
+  filter: brightness(0.65);
   pointer-events: none;
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -146,10 +146,25 @@ nav a:hover {
   background: #60a97b;
 }
 
+
+@media (max-width: 480px) {
+  .hero-content {
+    max-width: 90vw;
+    padding: 12px 16px;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.5rem, 7vw, 2.8rem);
+  }
+  .hero-btn {
+    font-size: 1em;
+    padding: 12px 30px;
+  }
+}
+
 /* Beneficios carrusel */
 .beneficios > h2 {
   font-weight: 300;
-  font-size: 2.5rem;
+   font-size: clamp(1.8rem, 5vw, 2.6rem);
   line-height: 1.15;
   color: #3f3f3f;
   margin-bottom: 0.3em;
@@ -204,6 +219,7 @@ nav a:hover {
   margin: 0;
 }
 .carousel-slide {
+   position: relative;
   flex: 0 0 calc((100% - 72px) / 5);
   height: 280px;
   background-size: cover;
@@ -243,6 +259,36 @@ nav a:hover {
   border-radius: 6px;
   user-select: none;
 }
+.carousel-slide .categoria {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(56,115,68,0.9);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 4px 12px;
+  border-radius: 16px;
+  z-index: 2;
+  pointer-events: none;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.20);
+}
+
+.carousel-slide > span:last-child {
+  position: absolute;
+  left: 0; right: 0; bottom: 18px;
+  text-align: center;
+  font-weight: 600;
+  background: rgba(0,0,0,0.38);
+  color: #fff;
+  font-size: 1.13rem;
+  padding: 7px 5px 4px 5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  z-index: 2;
+}
+
+
 .carousel-container:hover .carousel-btn {
   opacity: 1;
   pointer-events: auto;
@@ -519,7 +565,7 @@ footer {
 }
 .productos > h2 {
   font-weight: 700;
-  font-size: 2.6rem;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
   color: #296943;
   text-align: center;
   margin-bottom: 0.3em;
@@ -569,6 +615,94 @@ footer {
     font-size: 24px;
   }
 }
+/* Estilos para la etiqueta 'Cantidad' */
+#product-modal label[for="modal-qty"] {
+  display: block;
+  font-weight: 600;
+  color: #296943;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo para el input número de cantidad */
+#modal-qty {
+  width: 80px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  text-align: center;
+  border: 2px solid #387344;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  transition: border-color 0.3s ease;
+  outline-offset: 2px;
+  outline-color: transparent;
+}
+
+/* Efecto foco para el input */
+#modal-qty:focus {
+  border-color: #60a97b;
+  outline-color: #60a97b;
+  box-shadow: 0 0 8px rgba(96,169,123,0.5);
+}
+
+/* Para que el input tenga flechas (spinner) estilizadas y limpias */
+#modal-qty::-webkit-inner-spin-button,
+#modal-qty::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#modal-qty[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* Opcional: para que el input se vea más integrado, reduce margen bajo el input */
+#modal-qty {
+  margin-bottom: 18px;
+  display: block;
+}
+<button id="modal-cancel" style="
+  background: #cccccc;
+  color: #333333;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin-left: 12px;
+  transition: background-color 0.3s ease;
+">Cancelar</button>
+
+#modal-cancel {
+  background: #cccccc;
+  color: #333333;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin-left: 12px;
+  transition: background-color 0.3s ease;
+}
+
+#modal-cancel:hover {
+  background-color: #aaaaaa;
+}
+
+
+
+
+
+
+
+
+
+
 .modal.active {
   display: flex !important;
 }
