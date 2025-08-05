@@ -155,6 +155,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    
+
+    // Cerrar modal con la "X"
+const modalCloseBtn = document.querySelector('#product-modal .close');
+const productModal = document.getElementById('product-modal');
+
+if (modalCloseBtn && productModal) {
+  modalCloseBtn.addEventListener('click', () => {
+    productModal.style.display = 'none';
+  });
+
+  // Opcional: cerrar modal clickeando fuera del contenido
+  productModal.addEventListener('click', e => {
+    // Si el click fue en el fondo semi-transparente (modal), cerramos.
+    if (e.target === productModal) {
+      productModal.style.display = 'none';
+    }
+  });
+}
+
     // Botón "Agregar al carrito" en carrusel
     productosContainer.querySelectorAll('.productos-carousel-slide .add-cart-btn').forEach(button => {
       button.addEventListener('click', (e) => {
@@ -397,3 +417,56 @@ if (modalAddCartBtn) {
 
 // Inicializar contador carrito
 updateCartCount();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Menú hamburguesa
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle?.addEventListener('click', () => {
+    const isActive = menu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isActive);
+  });
+
+  // Cerrar menú al hacer clic en enlace
+  document.querySelectorAll('#menu a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetID = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetID);
+      if (targetElement) {
+        const headerOffset = 70; // header fijo
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = window.pageYOffset + elementPosition - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+      if (menu.classList.contains('active')) {
+        menu.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+
+  // Botón Ver video - comprueba si existe id="video"
+  const heroBtn = document.querySelector('.hero-btn');
+  const heroVideo = document.getElementById('video');
+  if (heroBtn && heroVideo) {
+    heroBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const headerOffset = 70;
+      const elementPosition = heroVideo.getBoundingClientRect().top;
+      const offsetPosition = window.pageYOffset + elementPosition - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // Aquí continúa tu JS para carruseles y carrito...
+
+});
