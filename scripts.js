@@ -197,3 +197,12 @@ function updateCartCount() {
   }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  menuToggle.addEventListener('click', () => {
+    const isActive = menu.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', isActive);
+  });
+});
