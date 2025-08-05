@@ -26,11 +26,11 @@
     <!-- Menú principal con id para control JS -->
     <nav id="menu">
       <a href="#tienda">Tienda</a>
-      <a href="#pid">PID</a>
-      <a href="#eventos">Diario</a>
-      <a href="#viajes">Viajes</a>
-      <a href="#acerca">Acerca de</a>
+      <a href="#pid">Acerca de</a>
       <a href="#diario">Blog</a>
+      <a href="#viajes">Viajes</a>
+      <a href="#acerca"></a>
+      <a href="#diario"></a>
     </nav>
 
     <div class="icons-header">
@@ -174,8 +174,12 @@
     <p id="modal-desc"></p>
     <div class="price" id="modal-price" style="font-weight:700; color:#387344; margin-bottom: 20px;"></div>
     <label for="modal-qty">Cantidad:</label>
-    <input type="number" id="modal-qty" value="1" min="1" style="width:60px; text-align:center; margin-bottom: 18px;">
+    <input type="number" id="modal-qty" value="1" min="1">
+
     <button id="modal-add-cart" class="add-cart-btn">Agregar al carrito</button>
+    <button id="modal-cancel" style="...">Cancelar</button>
+    <span class="close" style="position:absolute; top:10px; right:15px; font-size: 28px; cursor:pointer;">&times;</span>
+
   </div>
 </div>
 
