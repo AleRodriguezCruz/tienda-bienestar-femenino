@@ -583,3 +583,33 @@ footer {
 .see-more-btn:hover {
   background-color: #2c5c2e;     /* Color más oscuro al pasar el cursor */
 }
+
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav#menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 60px; /* Ajustar según altura header */
+    left: 0;
+    right: 0;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  nav#menu.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
