@@ -1643,3 +1643,180 @@ nav.nav-menu {
     padding-right: 0;
   }
 }
+
+/* ===== Ajustes generales para pantallas menores a 768px ===== */
+@media (max-width: 768px) {
+
+  /* Contenedor header: flex vertical, espacio */
+  .container.header-flex {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 15px;
+    gap: 12px;
+  }
+
+  /* Logo más pequeño */
+  img.logo-header {
+    height: 30px;
+  }
+
+  /* Navegación: menú hamburguesa visible, menú oculto por defecto */
+  nav#menu {
+    position: static !important; /* para evitar solapamientos */
+    display: none;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 12px 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 0 0 18px 18px;
+    margin-top: 0;
+  }
+
+  /* Al activar menú (agregar clase `.open` en JS) */
+  nav#menu.open {
+    display: flex;
+  }
+
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Lista de navegación vertical sin saltos */
+  .nav-list {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  /* Item nav con ancho completo */
+  .nav-item, .nav-item > a, .nav-item > button.dropbtn {
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  /* Flecha caret más legible y pequeña */
+  .dropbtn i.fa-caret-down {
+    font-size: 1rem !important;
+    margin-left: auto;
+  }
+
+  /* Mega menú: posicionamiento estático para fluidez */
+  .dropdown-content {
+    position: static !important;
+    min-width: auto !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border-radius: 12px !important;
+    padding: 15px 10px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    display: none !important;
+  }
+  /* Mostrar dropdown abierto */
+  .dropdown.open > .dropdown-content {
+    display: block !important;
+  }
+
+  /* Mega dropdown flex vertical */
+  .mega-dropdown {
+    flex-direction: column !important;
+    padding: 0 !important;
+    gap: 20px !important;
+  }
+
+  /* Filas mega menú verticales */
+  .row.column1, .row {
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100%;
+  }
+
+  /* Columnas ocupan todo el ancho */
+  .column {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 5px 15px !important;
+  }
+
+  /* Imagen lateral: ajustar tamaño y margen */
+  .mega-menu-image-container {
+    justify-content: center !important;
+    padding-left: 0 !important;
+    margin-top: 12px !important;
+  }
+  .mega-menu-image-container img {
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+  }
+
+  /* Texto nav normal más pequeño y ligero */
+  nav a {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    padding: 8px 6px;
+  }
+
+  /* Iconos (usuario carrito) un poco más pequeños */
+  .icons-header a {
+    font-size: 1.1rem;
+    margin-left: 15px;
+  }
+}
+
+/* ===== Ajustes para pantallas muy pequeñas (menos de 480px) ===== */
+
+@media (max-width: 480px) {
+  /* Hero y texto en móviles */
+  .hero-section {
+    height: 45vh;
+  }
+  .hero-bg {
+    height: 45vh;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.2rem, 6vw, 2.4rem);
+  }
+  .hero-btn {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+
+  /* Carousel beneficios ajustado */
+  .carousel-slide {
+    flex: 0 0 200px !important;
+    height: 140px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Productos carousel: 1 producto por fila */
+  .productos-carousel-slide {
+    flex: 0 0 100% !important;
+    margin-right: 10px !important;
+    height: auto !important;
+  }
+
+  /* Botones prev/next más pequeños */
+  .productos-carousel-btn {
+    width: 28px;
+    height: 42px;
+    font-size: 20px;
+    top: 38% !important;
+  }
+
+  /* Ajusta el texto en productos */
+  .product-name {
+    font-size: 1rem !important;
+  }
+
+  /* Modal productos */
+  .modal-content {
+    max-width: 90vw !important;
+    padding: 16px !important;
+  }
+}
+
