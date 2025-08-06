@@ -10,11 +10,11 @@
 </head>
 <body>
 
-<div class="top-banner">
-  Su Partner Business &nbsp; • &nbsp; Su Partner Lifestyle &nbsp; • &nbsp; Su Partner Wellness &nbsp; • &nbsp; Su Partner Business &nbsp; • &nbsp; Su Partner Lifestyle &nbsp; • &nbsp; Su Partner Wellness
-</div>
+  <div class="top-banner">
+    Su Partner Business &nbsp; • &nbsp; Su Partner Lifestyle &nbsp; • &nbsp; Su Partner Wellness &nbsp; • &nbsp; Su Partner Business &nbsp; • &nbsp; Su Partner Lifestyle &nbsp; • &nbsp; Su Partner Wellness
+  </div>
 
-<header class="nav-header">
+ <header class="nav-header">
   <div class="container header-flex">
     <img src="img/logo-xochikali.png" alt="Xochikali Logo" class="logo-header" />
 
@@ -23,14 +23,51 @@
       &#9776;
     </button>
 
-    <!-- Menú principal con id para control JS -->
-    <nav id="menu">
-      <a href="#tienda">Tienda</a>
-      <a href="#pid">Acerca de</a>
-      <a href="#diario">Blog</a>
-      <a href="#viajes">Viajes</a>
-      <a href="#acerca"></a>
-      <a href="#diario"></a>
+    <nav id="menu" class="nav-menu">
+      <ul class="nav-list">
+        <!-- Mega Menú Tienda -->
+        <li class="nav-item dropdown">
+          <button id="tienda-btn" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="mega-menu">
+            Tienda <i class="fa fa-caret-down"></i>
+          </button>
+          <div id="mega-menu" class="dropdown-content mega-dropdown" role="menu" aria-label="Categorías Tienda">
+            <div class="row column1">
+              <div class="column" role="none">
+                <h3 role="presentation">Nutrición de precisión</h3>
+                <a href="#tienda" data-category="desintoxicacion" role="menuitem">Desintoxicación</a>
+                <a href="#tienda" data-category="cuidado-personal" role="menuitem">Cuidado Personal</a>
+                <a href="#tienda" data-category="salud-diaria" role="menuitem">Salud Diaria</a>
+              </div>
+              <div class="column" role="none">
+                <h3 role="presentation">Bienestar</h3>
+                <a href="#tienda" data-category="bienestar-tech" role="menuitem">Bienestar Tech</a>
+                <a href="#tienda" data-category="tecnologia" role="menuitem">Tecnología</a>
+                <a href="#tienda" data-category="productos-nuevos" role="menuitem">Nuevos Productos</a>
+              </div>
+              <div class="column" role="none">
+                <h3 role="presentation">Personal Care</h3>
+                <a href="#tienda" data-category="cuidado-piel" role="menuitem">Cuidado de la Piel</a>
+                <a href="#tienda" data-category="cuidado-cabello" role="menuitem">Cuidado del Cabello</a>
+                <a href="#tienda" data-category="aromaterapia" role="menuitem">Aromaterapia</a>
+              </div>
+              <div class="column" role="none">
+                <h3 role="presentation">Salud y Otros</h3>
+                <a href="#tienda" data-category="suplementos" role="menuitem">Suplementos</a>
+                <a href="#tienda" data-category="equipamiento" role="menuitem">Equipamiento</a>
+                <a href="#tienda" data-category="accesorios" role="menuitem">Accesorios</a>
+              </div>
+              <!-- Imagen lateral -->
+              <div class="mega-menu-image-container" aria-hidden="true">
+                <img src="aceites-essenciales.jpg" alt="Aceites Esenciales" />
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#pid">Acerca de</a></li>
+        <li class="nav-item"><a href="#diario">Blog</a></li>
+        <li class="nav-item"><a href="#viajes">Viajes</a></li>
+        <li class="nav-item"><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
 
     <div class="icons-header">
@@ -51,6 +88,7 @@
     </div>
   </div>
 </header>
+
 
 
 <section class="hero-section">
