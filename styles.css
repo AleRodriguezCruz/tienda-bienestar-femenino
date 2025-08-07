@@ -1373,6 +1373,7 @@ nav.nav-menu {
   background: #497a37;
 }
 
+
 /* Modal carrito - estructura general */
 #cart-modal {
   position: fixed;
@@ -1613,4 +1614,62 @@ nav.nav-menu {
 /* Oculta cualquier total fuera del modal (por si aplica) */
 #cart-total-outside {
   display: none;
+}
+
+@media (max-width: 768px) {
+  /* Carruseles: contenedor con scroll natural */
+  .carousel-container,
+  .productos-carousel-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  .carousel-track,
+  .productos-carousel-track {
+    flex-wrap: nowrap;
+    transition: none !important;
+    transform: none !important;
+  }
+  .carousel-slide,
+  .productos-carousel-slide {
+    flex: 0 0 auto;
+    width: 180px !important;
+    height: auto !important;
+  }
+  .productos-carousel-slide {
+    height: 220px !important;
+  }
+  .carousel-btn,
+  .productos-carousel-btn {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* PID Section para móvil */
+  .pid-section {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+  .pid-image-container,
+  .pid-info-container {
+    width: 100vw !important;
+    height: auto !important;
+    min-width: auto !important;
+  }
+  .pid-image-container img {
+    height: auto !important;
+    max-height: 300px;
+  }
+
+  /* Fuentes y botones */
+  .hero-content h1 {
+    font-size: 2rem !important;
+  }
+  .beneficios > h2, .productos > h2 {
+    font-size: 2rem !important;
+  }
+  .hero-btn {
+    padding: 12px 24px !important;
+    font-size: 1rem !important;
+  }
 }
