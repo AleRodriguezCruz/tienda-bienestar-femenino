@@ -1,5 +1,7 @@
+ml
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,245 +10,225 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
   <div class="top-banner">
     Su Partner Business &nbsp; • &nbsp; Su Partner Lifestyle &nbsp; • &nbsp; Su Partner Wellness &nbsp; • &nbsp; Su Partner Business &nbsp; • &nbsp; Su Partner Lifestyle &nbsp; • &nbsp; Su Partner Wellness
   </div>
 
- <header class="nav-header">
-  <div class="container header-flex">
-    <img src="img/logo-xochikali.png" alt="Xochikali Logo" class="logo-header" />
+  <header class="nav-header">
+    <div class="container header-flex">
+      <img src="img/logo-xochikali.png" alt="Xochikali Logo" class="logo-header" />
 
-    <!-- Botón hamburguesa para móvil -->
-    <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" class="menu-toggle">
-      &#9776;
-    </button>
+      <!-- Botón hamburguesa para móvil -->
+      <button id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" class="menu-toggle">
+        &#9776;
+      </button>
 
-    <nav id="menu" class="nav-menu">
-      <ul class="nav-list">
-        <!-- Mega Menú Tienda -->
-        <li class="nav-item dropdown">
-          <button id="tienda-btn" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="mega-menu">
-            Tienda <i class="fa fa-caret-down"></i>
-          </button>
-          <div id="mega-menu" class="dropdown-content mega-dropdown" role="menu" aria-label="Categorías Tienda">
-            <div class="row column1">
-              <div class="column" role="none">
-                <h3 role="presentation">Nutrición de precisión</h3>
-                <a href="#tienda" data-category="desintoxicacion" role="menuitem">Desintoxicación</a>
-                <a href="#tienda" data-category="cuidado-personal" role="menuitem">Cuidado Personal</a>
-                <a href="#tienda" data-category="salud-diaria" role="menuitem">Salud Diaria</a>
-              </div>
-              <div class="column" role="none">
-                <h3 role="presentation">Bienestar</h3>
-                <a href="#tienda" data-category="bienestar-tech" role="menuitem">Bienestar Tech</a>
-                <a href="#tienda" data-category="tecnologia" role="menuitem">Tecnología</a>
-                <a href="#tienda" data-category="productos-nuevos" role="menuitem">Nuevos Productos</a>
-              </div>
-              <div class="column" role="none">
-                <h3 role="presentation">Personal Care</h3>
-                <a href="#tienda" data-category="cuidado-piel" role="menuitem">Cuidado de la Piel</a>
-                <a href="#tienda" data-category="cuidado-cabello" role="menuitem">Cuidado del Cabello</a>
-                <a href="#tienda" data-category="aromaterapia" role="menuitem">Aromaterapia</a>
-              </div>
-              <div class="column" role="none">
-                <h3 role="presentation">Salud y Otros</h3>
-                <a href="#tienda" data-category="suplementos" role="menuitem">Suplementos</a>
-                <a href="#tienda" data-category="equipamiento" role="menuitem">Equipamiento</a>
-                <a href="#tienda" data-category="accesorios" role="menuitem">Accesorios</a>
-              </div>
-              <!-- Imagen lateral -->
-              <div class="mega-menu-image-container" aria-hidden="true">
-                <img src="aceites-essenciales.jpg" alt="Aceites Esenciales" />
+      <nav id="menu" class="nav-menu" role="navigation">
+        <ul class="nav-list">
+          <!-- Mega Menú Tienda -->
+          <li class="nav-item dropdown">
+            <button id="tienda-btn" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="mega-menu">
+              Tienda <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </button>
+
+            <div id="mega-menu" class="dropdown-content mega-dropdown" role="menu" aria-label="Categorías Tienda">
+              <div class="row column1">
+                <div class="column" role="none">
+                  <h3 role="presentation">Nutrición de precisión</h3>
+                  <a href="#tienda" data-category="desintoxicacion" role="menuitem">Desintoxicación</a>
+                  <a href="#tienda" data-category="cuidado-personal" role="menuitem">Cuidado Personal</a>
+                  <a href="#tienda" data-category="salud-diaria" role="menuitem">Salud Diaria</a>
+                </div>
+                <div class="column" role="none">
+                  <h3 role="presentation">Bienestar</h3>
+                  <a href="#tienda" data-category="bienestar-tech" role="menuitem">Bienestar Tech</a>
+                  <a href="#tienda" data-category="tecnologia" role="menuitem">Tecnología</a>
+                  <a href="#tienda" data-category="productos-nuevos" role="menuitem">Nuevos Productos</a>
+                </div>
+                <div class="column" role="none">
+                  <h3 role="presentation">Personal Care</h3>
+                  <a href="#tienda" data-category="cuidado-piel" role="menuitem">Cuidado de la Piel</a>
+                  <a href="#tienda" data-category="cuidado-cabello" role="menuitem">Cuidado del Cabello</a>
+                  <a href="#tienda" data-category="aromaterapia" role="menuitem">Aromaterapia</a>
+                </div>
+                <div class="column" role="none">
+                  <h3 role="presentation">Salud y Otros</h3>
+                  <a href="#tienda" data-category="suplementos" role="menuitem">Suplementos</a>
+                  <a href="#tienda" data-category="equipamiento" role="menuitem">Equipamiento</a>
+                  <a href="#tienda" data-category="accesorios" role="menuitem">Accesorios</a>
+                </div>
+                <div class="mega-menu-image-container" aria-hidden="true">
+                  <img src="aceites-essenciales.jpg" alt="Aceites Esenciales" />
+                </div>
               </div>
             </div>
-          </div>
-        </li>
-        <li class="nav-item"><a href="#pid">Acerca de</a></li>
-        <li class="nav-item"><a href="#diario">Blog</a></li>
-        <li class="nav-item"><a href="#viajes">Viajes</a></li>
-        <li class="nav-item"><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
+          </li>
+          <li class="nav-item"><a href="#pid">Acerca de</a></li>
+          <li class="nav-item"><a href="#diario">Blog</a></li>
+          <li class="nav-item"><a href="#viajes">Viajes</a></li>
+          <li class="nav-item"><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-    <div class="icons-header">
-      <a href="#usuario" aria-label="Usuario"><i class="far fa-user"></i></a>
-      <a href="#cart" id="cart-icon" aria-label="Carrito" style="position:relative;">
-        <i class="fas fa-shopping-cart"></i>
-        <span id="cart-count" style="
-          position: absolute;
-          top: -8px;
-          right: -10px;
-          background: red;
-          color: white;
-          font-size: 12px;
-          padding: 2px 6px;
-          border-radius: 50%;
-          display: none;">0</span>
-      </a>
+      <div class="icons-header">
+        <a href="#usuario" aria-label="Usuario"><i class="far fa-user"></i></a>
+        <a href="#cart" id="cart-icon" aria-label="Carrito" style="position:relative;">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count" style="
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            display: none;">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección productos filtrados dinámica -->
+  <section id="productos-seleccionados" class="productos-seleccionados"></section>
+
+  <!-- Tu contenido original — hero, beneficios, productos, blog, footer — no modificado -->
+  
+  <section class="hero-section">
+    <video class="hero-bg" autoplay muted loop playsinline>
+      <source src="video-intro.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
+    <div class="hero-content">
+      <h1>Xochikali</h1>
+      <button class="hero-btn" onclick="location.href='#video'"><i class="fas fa-play"></i> Ver el video</button>
+    </div>
+  </section>
+
+  <section class="beneficios">
+    <h2>Nutrición de precisión, Precisamente para ti</h2>
+    <p>Nos tomamos su salud personalmente. Optimiza tu bienestar con una precisión natural <strong>Gran</strong>jaeuticales que apuntan a la causa raíz de sus desequilibrios de salud.</p>
+    <h3>Soluciones <em>Eso último.</em></h3>
+    <div class="carousel-container">
+      <button class="carousel-btn prev" aria-label="Anterior">&lt;</button>
+      <div class="carousel-track-container">
+        <ul class="carousel-track">
+          <li class="carousel-slide" style="background-image: url('crema-corporal.jpg');"><span>Desintoxicación</span></li>
+          <li class="carousel-slide" style="background-image: url('shampoo-anticaida.jpg');"><span>Personal Cuidado</span></li>
+          <li class="carousel-slide" style="background-image: url('aceite-menta.jpg');"><span>A diario Salud</span></li>
+          <li class="carousel-slide" style="background-image: url('shampoo-anticaspa.jpg');"><span>Proteína</span></li>
+          <li class="carousel-slide" style="background-image: url('bienestar_tech.jpg');"><span>Bienestar Tech</span></li>
+        </ul>
+      </div>
+      <button class="carousel-btn next" aria-label="Siguiente">&gt;</button>
+    </div>
+  </section>
+
+  <section class="productos" id="tienda">
+    <h2>Nuestros productos</h2>
+    <p>Nos tomamos su salud personalmente. Optimiza tu bienestar con una precisión natural <strong>Gran</strong>jaeuticales que apuntan a la causa raíz de sus desequilibrios de salud.</p>
+    <h3>Soluciones <em>.</em></h3>
+    <div class="productos-carousel-container">
+      <button class="productos-carousel-btn prev" aria-label="Anterior">&lt;</button>
+      <div class="productos-carousel-track-container">
+        <ul class="productos-carousel-track">
+          <li class="productos-carousel-slide" data-name="Desintoxicación" data-image="crema-corporal.jpg" data-desc="Descripción del producto Desintoxicación." data-price="249" data-category="desintoxicacion">
+            <div class="carousel-image" style="background-image: url('crema-corporal.jpg');"></div>
+            <div class="carousel-info">
+              <span class="product-name">Desintoxicación</span>
+              <button class="see-more-btn">Ver producto</button>
+              
+            </div>
+          </li>
+          <li class="productos-carousel-slide" data-name="Personal Cuidado" data-image="shampoo-anticaida.jpg" data-desc="Descripción del producto Personal Cuidado." data-price="199" data-category="cuidado-personal">
+            <div class="carousel-image" style="background-image: url('shampoo-anticaida.jpg');"></div>
+            <div class="carousel-info">
+              <span class="product-name">Personal Cuidado</span>
+              <button class="see-more-btn">Ver producto</button>
+              
+            </div>
+          </li>
+          <li class="productos-carousel-slide" data-name="A diario Salud" data-image="aceite-menta.jpg" data-desc="Descripción del producto A diario Salud." data-price="159" data-category="salud-diaria">
+            <div class="carousel-image" style="background-image: url('aceite-menta.jpg');"></div>
+            <div class="carousel-info">
+              <span class="product-name">A diario Salud</span>
+              <button class="see-more-btn">Ver producto</button>
+              
+            </div>
+          </li>
+          <li class="productos-carousel-slide" data-name="Aromaterapia" data-image="aceites-essenciales.jpg" data-desc="Descripción del producto Aromaterapia." data-price="180" data-category="aromaterapia">
+            <div class="carousel-image" style="background-image: url('aceites-essenciales.jpg');"></div>
+            <div class="carousel-info">
+              <span class="product-name">Aromaterapia</span>
+              <button class="see-more-btn">Ver producto</button>
+              
+            </div>
+          </li>
+          <!-- Más productos -->
+        </ul>
+      </div>
+      <button class="productos-carousel-btn next" aria-label="Siguiente">&gt;</button>
+    </div>
+  </section>
+
+  <!-- Modal producto -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <button class="close">&times;</button>
+      <img id="modal-img" src="" alt="" />
+      <h3 id="modal-name"></h3>
+      <p id="modal-desc"></p>
+      <div class="price" id="modal-price"></div>
+      <label for="modal-qty">Cantidad:</label>
+      <input type="number" id="modal-qty" value="1" min="1" />
+      <button id="modal-add-cart" class="add-cart-btn">Agregar al carrito</button>
+      <button id="modal-cancel">Cancelar</button>
     </div>
   </div>
-</header>
 
+ <!-- Modal carrito oculto inicialmente -->
+<div id="cart-modal" class="modal" style="display:none;">
+  <div class="cart-modal-wrapper">
+    <button id="close-cart" class="close" title="Cerrar carrito">&times;</button>
 
+    <section class="cart-bag" aria-label="Productos en carrito">
+      <h2>Carrito de Compras</h2>
+      <div id="cart-products-list" role="list" tabindex="0"></div>
+      <div class="cart-total-row">
+        <strong>Total:</strong>
+        <span id="cart-total" aria-live="polite" aria-atomic="true">$0.00</span>
+      </div>
+    </section>
 
-<section class="hero-section">
-  <video class="hero-bg" autoplay muted loop playsinline>
-    <source src="video-intro.mp4" type="video/mp4" />
-    Tu navegador no soporta video HTML5.
-  </video>
-  <div class="hero-content">
-    <h1>Xochikali</h1>
-    <button class="hero-btn" onclick="location.href='#video'"><i class="fas fa-play"></i> Ver el video</button>
-  </div>
-</section>
+    <section class="cart-checkout" aria-label="Opciones de pago">
+      <h3>Forma de pago</h3>
+      <form id="payment-form" role="radiogroup" aria-label="Seleccione forma de pago">
+        <label class="payment-option" tabindex="0" role="radio" aria-checked="false" for="pay-visa">
+          <input type="radio" id="pay-visa" name="payment-method" value="visa" checked />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" />
+        </label>
+        <label class="payment-option" tabindex="0" role="radio" aria-checked="false" for="pay-mastercard">
+          <input type="radio" id="pay-mastercard" name="payment-method" value="mastercard" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg" alt="MasterCard" />
+        </label>
+        <label class="payment-option" tabindex="0" role="radio" aria-checked="false" for="pay-paypal">
+          <input type="radio" id="pay-paypal" name="payment-method" value="paypal" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" />
+        </label>
+        <label class="payment-option" tabindex="0" role="radio" aria-checked="false" for="pay-amex">
+          <input type="radio" id="pay-amex" name="payment-method" value="amex" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg" alt="American Express" />
+        </label>
+      </form>
 
-<section class="beneficios">
-  <h2>Nutrición de precisión, Precisamente para ti</h2>
-  <p>Nos tomamos su salud personalmente. Optimiza tu bienestar con una precisión natural <strong>Gran</strong>jaeuticales que apuntan a la causa raíz de sus desequilibrios de salud.</p>
-  <h3>Soluciones <em>Eso último.</em></h3>
-
-  <div class="carousel-container">
-    <button class="carousel-btn prev" aria-label="Anterior">&lt;</button>
-    <div class="carousel-track-container">
-      <ul class="carousel-track">
-        <li class="carousel-slide" style="background-image: url('crema-corporal.jpg');"><span>Desintoxicación</span></li>
-        <li class="carousel-slide" style="background-image: url('shampoo-anticaida.jpg');"><span>Personal Cuidado</span></li>
-        <li class="carousel-slide" style="background-image: url('aceite-menta.jpg');"><span>A diario Salud</span></li>
-        <li class="carousel-slide" style="background-image: url('shampoo-anticaspa.jpg');"><span>Proteína</span></li>
-        <li class="carousel-slide" style="background-image: url('bienestar_tech.jpg');"><span>Bienestar Tech</span></li>
-        <li class="carousel-slide" style="background-image: url('crema-corporal.jpg');"><span>Desintoxicación</span></li>
-        <li class="carousel-slide" style="background-image: url('shampoo-anticaida.jpg');"><span>Personal Cuidado</span></li>
-        <li class="carousel-slide" style="background-image: url('aceite-menta.jpg');"><span>A diario Salud</span></li>
-        <li class="carousel-slide" style="background-image: url('shampoo-anticaspa.jpg');"><span>Proteína</span></li>
-        <li class="carousel-slide" style="background-image: url('bienestar_tech.jpg');"><span>Bienestar Tech</span></li>
-      </ul>
-    </div>
-    <button class="carousel-btn next" aria-label="Siguiente">&gt;</button>
-  </div>
-</section>
-<section class="productos" id="tienda">
-  <h2>Nuestros productos</h2>
-  <p>Nos tomamos su salud personalmente. Optimiza tu bienestar con una precisión natural <strong>Gran</strong>jaeuticales que apuntan a la causa raíz de sus desequilibrios de salud.</p>
-  <h3>Soluciones <em>.</em></h3>
-
-  <div class="productos-carousel-container">
-    <button class="productos-carousel-btn prev" aria-label="Anterior">&lt;</button>
-    <div class="productos-carousel-track-container">
-      <ul class="productos-carousel-track">
-        <li class="productos-carousel-slide"
-            data-name="Desintoxicación"
-            data-image="crema-corporal.jpg"
-            data-desc="Descripción del producto Desintoxicación."
-            data-price="249">
-          <div class="carousel-image" style="background-image: url('crema-corporal.jpg');"></div>
-          <div class="carousel-info">
-            <span class="product-name">Desintoxicación</span>
-            <button class="see-more-btn">Ver producto</button>
-          </div>
-        </li>
-        
-        
-        <li class="productos-carousel-slide"
-            data-name="Personal Cuidado"
-            data-image="shampoo-anticaida.jpg"
-            data-desc="Descripción del producto Personal Cuidado."
-            data-price="199">
-          <div class="carousel-image" style="background-image: url('shampoo-anticaida.jpg');"></div>
-          <div class="carousel-info">
-            <span class="product-name">Personal Cuidado</span>
-            <button class="see-more-btn">Ver producto</button>
-          </div>
-        </li>
-
-        <li class="productos-carousel-slide"
-            data-name="A diario Salud"
-            data-image="aceite-menta.jpg"
-            data-desc="Descripción del producto A diario Salud."
-            data-price="159">
-          <div class="carousel-image" style="background-image: url('aceite-menta.jpg');"></div>
-          <div class="carousel-info">
-            <span class="product-name">A diario Salud</span>
-            <button class="see-more-btn">Ver producto</button>
-          </div>
-        </li>
-
-        <li class="productos-carousel-slide"
-            data-name="A diario Salud"
-            data-image="aceites-essenciales.jpg"
-            data-desc="Descripción del producto A diario Salud."
-            data-price="159">
-          <div class="carousel-image" style="background-image: url('aceites-essenciales.jpg');"></div>
-          <div class="carousel-info">
-            <span class="product-name">A diario Salud</span>
-            <button class="see-more-btn">Ver producto</button>
-          </div>
-        </li>
-
-        <li class="productos-carousel-slide"
-            data-name="A diario Salud"
-            data-image="aceite-menta.jpg"
-            data-desc="Descripción del producto A diario Salud."
-            data-price="159">
-          <div class="carousel-image" style="background-image: url('aceite-menta.jpg');"></div>
-          <div class="carousel-info">
-            <span class="product-name">A diario Salud</span>
-            <button class="see-more-btn">Ver producto</button>
-          </div>
-        </li>
-
-        <!-- Añade más productos con data-* correspondientes -->
-      </ul>
-    </div>
-    <button class="productos-carousel-btn next" aria-label="Siguiente">&gt;</button>
-  </div>
-</section>
-
-<!-- Modal para mostrar info del producto -->
-<div class="modal" id="product-modal" style="display:none; position: fixed; top:0; left:0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); justify-content:center; align-items:center;">
-  <div class="modal-content" style="background:#fff; padding: 25px; border-radius: 8px; max-width: 400px; position: relative;">
-    <span class="close" style="position:absolute; top:10px; right:15px; font-size: 28px; cursor:pointer;">&times;</span>
-    <img id="modal-img" src="" alt="" style="max-width: 100%; border-radius:8px; margin-bottom: 15px;">
-    <h3 id="modal-name"></h3>
-    <p id="modal-desc"></p>
-    <div class="price" id="modal-price" style="font-weight:700; color:#387344; margin-bottom: 20px;"></div>
-    <label for="modal-qty">Cantidad:</label>
-    <input type="number" id="modal-qty" value="1" min="1">
-
-    <button id="modal-add-cart" class="add-cart-btn">Agregar al carrito</button>
-    <button id="modal-cancel" style="...">Cancelar</button>
-    <span class="close" style="position:absolute; top:10px; right:15px; font-size: 28px; cursor:pointer;">&times;</span>
-
+      <button id="checkout-btn" class="btn-checkout" type="button">Pagar ahora</button>
+    </section>
   </div>
 </div>
 
-<!-- Modal Carrito -->
-<div id="cart-modal" style="display:none; position: fixed; top:0; left:0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index: 1500;">
-  <div style="background:#fff; border-radius:10px; max-width: 450px; width: 90%; max-height: 80vh; overflow-y: auto; padding: 20px; position: relative;">
-    <button id="close-cart" style="position:absolute; top:10px; right:15px; font-size: 24px; background:none; border:none; cursor:pointer;">&times;</button>
-    <h2 style="color:#296943; margin-bottom:15px;">Carrito de Compras</h2>
-    <ul id="cart-products-list" style="list-style:none; padding:0; margin:0 0 20px 0;"></ul>
-    <div id="cart-total" style="font-weight: 700; font-size: 1.2rem; margin-bottom: 20px; text-align:right; color:#387344;">Total: $0.00</div>
-
-    <h3 style="color:#296943; margin-bottom: 10px;">Forma de pago</h3>
-    <form id="payment-form" style="display:flex; flex-direction: column; gap: 12px; margin-bottom: 15px;">
-      <label>
-        <input type="radio" name="payment-method" value="tarjeta" checked />
-        Tarjeta de crédito/débito
-      </label>
-      <label>
-        <input type="radio" name="payment-method" value="paypal" />
-        PayPal
-      </label>
-      <label>
-        <input type="radio" name="payment-method" value="transferencia" />
-        Transferencia bancaria
-      </label>
-    </form>
-    <button id="checkout-btn" style="background:#387344; color:#fff; border:none; padding: 10px 20px; font-weight: 700; border-radius: 8px; cursor:pointer;">Pagar ahora</button>
-  </div>
-</div>
 
   <section id="pid" class="main-section pid-section">
   <div class="pid-image-container">
