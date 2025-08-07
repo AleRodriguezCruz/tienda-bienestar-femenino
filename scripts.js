@@ -1,7 +1,6 @@
 let cart = JSON.parse(localStorage.getItem('carrito')) || {};
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Elementos UI
   const cartCountEl = document.getElementById('cart-count');
   const cartModal = document.getElementById('cart-modal');
   const cartProductsList = document.getElementById('cart-products-list');
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (productosContenedor) productosContenedor.style.display = 'none';
 
-  // Actualizar contador carrito
   function updateCartCount() {
     if (!cartCountEl) return;
     const totalItems = Object.values(cart).reduce((sum, item) => sum + item.qty, 0);
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cartCountEl.style.display = totalItems > 0 ? 'inline-block' : 'none';
   }
 
-  // Renderizar carrito
   function renderCart() {
     if (!cartProductsList) return;
     cartProductsList.innerHTML = '';
@@ -41,60 +38,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const row = document.createElement('div');
       row.className = 'cart-product-row';
-      row.style.display = 'flex';
-      row.style.alignItems = 'center';
-      row.style.justifyContent = 'space-between';
-      row.style.gap = '10px';
-      row.style.padding = '16px 0';
-      row.style.borderBottom = '1px solid #eee';
 
       const img = document.createElement('img');
       img.src = product.image || 'placeholder.jpg';
       img.alt = product.name;
-      img.style.width = '48px';
-      img.style.height = '48px';
-      img.style.objectFit = 'cover';
-      img.style.borderRadius = '6px';
 
       const info = document.createElement('div');
-      info.style.flex = '1';
-      info.style.marginLeft = '10px';
+      info.className = 'cart-product-info';
       info.innerHTML = `<strong>${product.name}</strong><br>Qty: ${product.qty} x $${product.price.toFixed(2)}`;
 
       const btnDelete = document.createElement('button');
       btnDelete.textContent = 'Eliminar';
-      btnDelete.style.marginLeft = '10px';
-      btnDelete.style.background = '#cc3333';
-      btnDelete.style.color = 'white';
-      btnDelete.style.border = 'none';
-      btnDelete.style.borderRadius = '6px';
-      btnDelete.style.cursor = 'pointer';
-      btnDelete.style.padding = '4px 8px';
+      btnDelete.className = 'eliminar';
       btnDelete.onclick = () => {
         delete cart[key];
         saveAndRenderCart();
       };
 
+      const priceEl = document.createElement('div');
+      priceEl.className = 'cart-product-price';
+      priceEl.textContent = `$${(product.qty * product.price).toFixed(2)}`;
+
       row.appendChild(img);
       row.appendChild(info);
       row.appendChild(btnDelete);
+      row.appendChild(priceEl);
 
       cartProductsList.appendChild(row);
     });
 
     if (cartTotal) {
-      cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+      cartTotal.textContent = `$${total.toFixed(2)}`;
     }
   }
 
-  // Almacena en localStorage y actualiza UI
   function saveAndRenderCart() {
     localStorage.setItem('carrito', JSON.stringify(cart));
     renderCart();
     updateCartCount();
   }
 
-  // Abrir modal producto con datos
   productosContainer?.querySelectorAll('.productos-carousel-slide .see-more-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       const slide = e.target.closest('.productos-carousel-slide');
@@ -108,12 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Cerrar modal producto
   modalCloseBtn?.addEventListener('click', () => productModal.style.display = 'none');
   modalCancelBtn?.addEventListener('click', () => productModal.style.display = 'none');
   productModal?.addEventListener('click', e => { if (e.target === productModal) productModal.style.display = 'none'; });
 
-  // Agregar al carrito desde modal producto
   modalAddCartBtn?.addEventListener('click', () => {
     const name = document.getElementById('modal-name').textContent.trim();
     let qty = parseInt(document.getElementById('modal-qty').value, 10);
@@ -134,17 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
     productModal.style.display = 'none';
   });
 
-  // Abrir modal carrito
   cartIcon?.addEventListener('click', () => {
     renderCart();
     cartModal.style.display = 'flex';
   });
 
-  // Cerrar modal carrito
   closeCartBtn?.addEventListener('click', () => cartModal.style.display = 'none');
   cartModal?.addEventListener('click', e => { if (e.target === cartModal) cartModal.style.display = 'none'; });
 
-  // Checkout simulado
   const checkoutBtn = document.getElementById('checkout-btn');
   checkoutBtn?.addEventListener('click', () => {
     if (Object.keys(cart).length === 0) {
@@ -160,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cartModal.style.display = 'none';
   });
 
-  // Menú hamburguesa toggle
   menuToggle?.addEventListener('click', () => {
     if (!menu || !dropdown || !tiendaBtn) return;
     const isOpen = menu.classList.toggle('open');
@@ -172,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Mega menú toggle
   tiendaBtn?.addEventListener('click', e => {
     e.preventDefault();
     e.stopPropagation();
@@ -186,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Cerrar menús al click fuera
   document.addEventListener('click', e => {
     if (dropdown && !dropdown.contains(e.target)) {
       dropdown.classList.remove('open');
@@ -199,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Tecla Escape cierra menús y modales
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       if (dropdown?.classList.contains('open')) {
@@ -216,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Filtrar productos por categoría
   const productosSlides = document.querySelectorAll('.productos-carousel-slide');
   const dropdownLinks = document.querySelectorAll('.dropdown-content a[data-category]');
 
@@ -233,14 +206,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Reset carrusel productos
       const productosContainer_ = document.querySelector('.productos-carousel-container');
       if (productosContainer_) {
         const track = productosContainer_.querySelector('.productos-carousel-track');
         if(track) track.style.transform = 'translateX(0)';
       }
 
-      // Mostrar productos filtrados destacados en sección aparte
       if (productosContenedor) {
         const filtrados = Array.from(productosSlides).filter(slide => slide.style.display === 'flex').slice(0, 4);
         if (filtrados.length && category !== 'todos') {
@@ -267,11 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      // Scroll a sección tienda principal
       const tiendaSection = document.getElementById('tienda');
       tiendaSection?.scrollIntoView({ behavior: 'smooth' });
 
-      // Cerrar mega menú
       if (megaMenu?.classList.contains('open')) {
         megaMenu.classList.remove('open');
         tiendaBtn?.setAttribute('aria-expanded', 'false');
@@ -279,11 +248,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Inicia el contador carrito
   updateCartCount();
 });
+
+// Carruseles JS separados para mejor claridad y funcionamiento móvil
+
 document.addEventListener('DOMContentLoaded', () => {
-  // -- CARRUSEL BENEFICIOS --
+  // Carrusel beneficios
   const carouselContainer = document.querySelector('.carousel-container');
   if (carouselContainer) {
     const track = carouselContainer.querySelector('.carousel-track');
@@ -298,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function getSlideWidth() {
-      return slides[0].getBoundingClientRect().width + 18; // width + margin-right
+      return slides[0].getBoundingClientRect().width + 18;
     }
 
     function moveToSlide(index) {
@@ -318,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => moveToSlide(0));
   }
 
-  // -- CARRUSEL PRODUCTOS --
+  // Carrusel productos
   const productosCarousel = document.querySelector('.productos-carousel-container');
   if (productosCarousel) {
     const track = productosCarousel.querySelector('.productos-carousel-track');
@@ -353,17 +324,3 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => moveToSlide(0));
   }
 });
-
-// En respuesta al tamaño pantalla, solo usar transform en desktop, en móvil usar scroll natural
-
-function isMobile() {
-  return window.innerWidth <= 768;
-}
-
-// Ejemplo en función moveToSlide:
-
-if (!isMobile()) {
-  track.style.transform = `translateX(-${slideWidth * index}px)`;
-} else {
-  // En móvil no aplicar transform, navegación por scroll natural
-}
